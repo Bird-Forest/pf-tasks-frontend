@@ -8,15 +8,15 @@ export const WrapList = styled.ul`
   gap: 8px;
   width: 100%;
   padding: 0;
-  margin: 0 auto;
+  margin: 80px auto;
   @media screen and (min-width: 380px) {
     min-width: 360px;
   }
   @media screen and (min-width: 440px) {
-    min-width: 420px;
+    /* min-width: 420px; */
   }
   @media screen and (min-width: 500px) {
-    width: 480px;
+    /* width: 480px; */
   }
 `;
 
@@ -29,6 +29,22 @@ export const WrapTask = styled.li`
   height: 44px;
   /* padding: 0;
   margin: 0 auto; */
+`;
+
+export const DateTask = styled.p`
+  display: flex;
+  width: 70px;
+  height: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: aqua;
+  color: black;
+  padding: 0;
+  margin: 0;
+`;
+export const StatusTask = styled.button`
+  width: 50px;
+  height: 50px;
 `;
 
 export const TextTask = styled.div`

@@ -55,3 +55,9 @@ export const TitleLoginPage = styled.h2`
   padding: 0;
   margin: 0;
 `;
+export const WrapHome = styled.div`
+  top: 100px;
+  display: flex;
+  width: 900px;
+  height: 100%;
+`;

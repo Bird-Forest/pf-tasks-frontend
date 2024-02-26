@@ -7,7 +7,8 @@ import {
 } from 'redux/selectors';
 import { useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
-import Task from 'components/Task/Task';
+import MyTask from './MyTask';
+// import Task from 'components/Task/Task';
 
 export default function TaskList() {
   // const dispatch = useDispatch();
@@ -27,7 +28,7 @@ export default function TaskList() {
       {isLoading && <p>Loading tasks...</p>}
       {error && <p>{error}</p>}
       <WrapList>
-        {showArr && newTasks.map(task => <Task task={task} key={nanoid()} />)}
+        {showArr && newTasks.map(task => <MyTask task={task} key={nanoid()} />)}
       </WrapList>
     </>
   );

@@ -5,12 +5,13 @@ import { Route, Routes } from 'react-router-dom';
 // import { RestrictedRoute } from './RestrictedRoute';
 import { useAuth } from 'hooks';
 // import { refreshUser } from 'redux/operations';
-import { Navigation } from './Navigation/Navigation';
+// import { Navigation } from './Navigation/Navigation';
 import { refreshThunk } from 'redux/operations';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
 import { Container } from './App.styled';
 import Loading from './Loader/Loader';
+import AppBar from './Navigation/AppBar';
 // import Layout from './Layout';
 
 const HomePage = lazy(() => import('../pages/HomePage'));
@@ -58,7 +59,7 @@ export const App = () => {
     <b>Refreshing user...</b>
   ) : (
     <Container>
-      <Navigation />
+      <AppBar />
       <Suspense fallback={<Loading />}>
         <Routes>
           {appRoutes.map(({ path, element }) => (

@@ -7,16 +7,41 @@ export const Container = styled.div`
   align-items: center;
   width: 100%;
   height: 100vh;
-  padding: 0 10px;
-  margin: 0 auto;
-  background-color: #e3f2fd;
+  padding: 0;
+  margin: 0;
+  /* background-color: #e3f2fd; */
   @media screen and (min-width: 380px) {
-    min-width: 380px;
+    min-width: 320px;
   }
-  @media screen and (min-width: 440px) {
+  /* @media screen and (min-width: 440px) {
     min-width: 440px;
   }
   @media screen and (min-width: 500px) {
     width: 500px;
-  }
+  } */
+`;
+export const WrapNavigate = styled.div`
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1769aa;
+  width: 100%;
+  height: 7vh;
+  padding: 0;
+  margin: 0;
+`;
+export const WrapOutlet = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e3f2fd;
+  width: 100%;
+  height: 93vh;
+  padding: 0;
+  margin: 0;
 `;

@@ -3,37 +3,51 @@ import { createSlice, nanoid } from '@reduxjs/toolkit';
 const tasksData = {
   tasks: [
     {
+      date: '26.02',
+      completed: false,
       color: '#ff5252',
       title: 'Eum voluptate dolor.',
       id: '1',
     },
     {
+      date: '26.02',
+      completed: false,
       color: '#ffee58',
       title: 'Temporibus praesentium praesentium nesciunt nisi cumque.',
       id: '2',
     },
     {
+      date: '26.02',
+      completed: false,
       color: '#00e676',
       title: 'Nemo ratione rerum.',
       id: '3',
     },
     {
+      date: '26.02',
+      completed: false,
       color: '#ff5252',
       title: 'Quam optio quaerat hic eveniet voluptatibus sequi enim.',
       id: '4',
     },
     {
+      date: '26.02',
+      completed: false,
       color: '#ffee58',
       title:
         'Cumque beatae fugiat error quisquam vero iusto nesciunt deleniti.',
       id: '5',
     },
     {
+      date: '26.02',
+      completed: false,
       color: '#ffee58',
       title: 'Dolor sequi architecto voluptatibus.',
       id: '6',
     },
     {
+      date: '26.02',
+      completed: false,
       color: '#00e676',
       title: 'Ipsam voluptatem velit et delectus.',
       id: '7',
