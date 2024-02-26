@@ -10,7 +10,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
     <PersistGate persistor={persistor}>
-      <BrowserRouter basename="task-manager-authorization">
+      <BrowserRouter basename="pf-tasks-frontend">
         <App />
       </BrowserRouter>
     </PersistGate>
