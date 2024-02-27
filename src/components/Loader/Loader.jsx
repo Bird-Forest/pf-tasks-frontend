@@ -20,8 +20,8 @@ export default function Loading() {
       <RevolvingDot
         radius="45"
         strokeWidth="5"
-        color="#1769aa"
-        secondaryColor="#2196f3"
+        color="#ff1744"
+        secondaryColor="#424242"
         ariaLabel="revolving-dot-loading"
         wrapperStyle={styles.container}
         wrapperClass=""

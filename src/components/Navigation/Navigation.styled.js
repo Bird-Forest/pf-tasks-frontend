@@ -35,7 +35,7 @@ export const WrapUser = styled.div`
 `;
 export const AvatarUser = styled.div`
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   width: 44px;
   height: 44px;
@@ -44,14 +44,26 @@ export const AvatarUser = styled.div`
   padding: 0;
   margin: 0;
   .icon-avatar {
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: red;
   }
 `;
-export const NameUser = styled.p`
-  font-size: 16px;
-  font-weight: 500;
-  color: #ffffff;
+export const NameUser = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .name-text {
+    font-size: 24px;
+    font-weight: 500;
+    color: #ffffff;
+  }
+  .default {
+    font-size: 32px;
+    font-weight: 500;
+    color: #ffffff;
+  }
 `;
 export const BtnSet = styled.button`
   width: 36px;
@@ -78,6 +90,7 @@ export const WrapSetting = styled.div`
   border-radius: 12px;
   border: 1px solid #eeeeee;
   background-color: #ffffff;
+  box-shadow: 0px 4px 8px 0px RGBA(158, 158, 158, 0.34);
   transition: all 0.3s;
   padding: 12px 16px;
   .btn-set {

@@ -1,12 +1,15 @@
-import LoginForm from 'components/LoginForm/LoginForm';
 import React from 'react';
-import { TitleLoginPage, WrapLoginPage } from './Page.styled';
+import { TitleSignPage, WrapSignPage } from './Page.styled';
+import { WrapOutlet } from '../components/App.styled';
+import FormSignIn from '../components/AuthForm/FormSignIn';
 
 export default function LoginPage() {
   return (
-    <WrapLoginPage>
-      <TitleLoginPage>Login</TitleLoginPage>
-      <LoginForm />
-    </WrapLoginPage>
+    <WrapOutlet>
+      <WrapSignPage>
+        <TitleSignPage>Log In</TitleSignPage>
+        <FormSignIn />
+      </WrapSignPage>
+    </WrapOutlet>
   );
 }

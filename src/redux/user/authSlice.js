@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+// import { FcReddit } from 'react-icons/fc';
 import {
   loginThunk,
   logoutThunk,
@@ -7,6 +8,8 @@ import {
   updateAvatar,
   updateUser,
 } from './operations';
+
+// const defaultAvatar = <FcReddit className="icon-avatar" />;
 
 const initialState = {
   user: { _id: null, name: null, email: null, avatarURL: null },

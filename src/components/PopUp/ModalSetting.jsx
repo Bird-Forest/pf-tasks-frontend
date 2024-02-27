@@ -11,21 +11,14 @@ import {
 import { IoCloseSharp } from 'react-icons/io5';
 import { FaArrowUp } from 'react-icons/fa';
 import { FcReddit } from 'react-icons/fc';
-import { useSelector } from 'react-redux';
-import { selectUser } from 'redux/selectors';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectUser } from '../../redux/selectors';
+import { updateAvatar } from '../../redux/user/operations';
 
 export default function ModalSetting({ onClose }) {
   const user = useSelector(selectUser);
   const avatar = user.avatarURL;
-
-  const fileUpload = evt => {
-    console.log(evt.target.files);
-    const img = evt.target.files;
-    console.log(img);
-    console.log(evt.target.name.value);
-    const user = evt.target.value;
-    console.log(user);
-  };
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const handleEscape = event => {
@@ -41,6 +34,19 @@ export default function ModalSetting({ onClose }) {
       document.body.style.overflow = 'auto';
     };
   }, [onClose]);
+
+  const uploadFile = evt => {
+    const file = evt.target.files;
+    console.log(file);
+    dispatch(updateAvatar(file));
+  };
+
+  const updateName = evt => {
+    const newName = evt.target.value;
+    console.log(newName);
+    dispatch(updateAvatar(newName));
+  };
+
   return (
     <Backdrop onClick={onClose}>
       <WrapPopUp onClick={e => e.stopPropagation()}>
@@ -50,11 +56,11 @@ export default function ModalSetting({ onClose }) {
         <TitlePopUp>Setting</TitlePopUp>
         <AvatarPopUp>
           <div className="avatar-img">
-            {avatar ? (
+            {avatar === null ? (
+              <FcReddit className="icon-avatar" />
+            ) : (
               // <img src={`${avatar}`} alt="avatar" />
               <img src={avatar} alt="avatar" />
-            ) : (
-              <FcReddit className="icon-avatar" />
             )}
           </div>
           <input
@@ -66,7 +72,7 @@ export default function ModalSetting({ onClose }) {
             // accept="image/*"
             // style={{ display: 'none' }}
             className="visually-hidden"
-            onClick={fileUpload}
+            onClick={uploadFile}
           />
           <label htmlFor="fileElem" className="lable-text">
             <FaArrowUp /> Upload your avatar
@@ -81,12 +87,16 @@ export default function ModalSetting({ onClose }) {
           <input
             type="text"
             name="user"
+            defaultValue={user.name}
             className="input-name"
-            onChange={fileUpload}
+            onChange={updateName}
           />
         </NamePopUp>
-        <BtnPopUpSave>Save</BtnPopUpSave>
+        <BtnPopUpSave type="button" onClick={onClose}>
+          Save
+        </BtnPopUpSave>
       </WrapPopUp>
     </Backdrop>
   );
 }
+// onClick={e => e.stopPropagation()}

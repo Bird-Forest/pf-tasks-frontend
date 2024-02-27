@@ -1,13 +1,16 @@
 import React from 'react';
 // import { Helmet } from 'react-helmet';
-import { TitleRegisterPage, WrapRegisterPage } from './Page.styled';
-import RegisterForm from 'components/RegisterForm/RegisterForm';
+import { TitleSignPage, WrapSignPage } from './Page.styled';
+import FormSignUp from '../components/AuthForm/FormSignUp';
+import { WrapOutlet } from '../components/App.styled';
 
 export default function RegisterPage() {
   return (
-    <WrapRegisterPage>
-      <TitleRegisterPage>Registration</TitleRegisterPage>
-      <RegisterForm />
-    </WrapRegisterPage>
+    <WrapOutlet>
+      <WrapSignPage>
+        <TitleSignPage>Sign Up</TitleSignPage>
+        <FormSignUp />
+      </WrapSignPage>
+    </WrapOutlet>
   );
 }

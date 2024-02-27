@@ -20,41 +20,40 @@ export const WrapTasksPage = styled.div`
     width: 480px;
   }
 `;
-export const WrapRegisterPage = styled.div`
+export const WrapSignPage = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
   width: 100%;
-  height: 100vh;
-  margin: 0 auto;
-  padding: 72px 0 0 0;
-  background-color: #e3f2fd;
-`;
-export const TitleRegisterPage = styled.h2`
-  font-size: 24px;
-  color: #1769aa;
-  padding: 0;
   margin: 0;
+  padding: 28px 0 0 0;
 `;
-export const WrapLoginPage = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 20px;
-  width: 100%;
-  height: 100vh;
-  margin: 0 auto;
-  padding: 72px 0 0 0;
-`;
-export const TitleLoginPage = styled.h2`
+export const TitleSignPage = styled.h3`
   font-size: 24px;
-  color: #1769aa;
-  padding: 0;
-  margin: 0;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+  color: #424242;
 `;
+// export const WrapLoginPage = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: flex-start;
+//   align-items: center;
+//   gap: 20px;
+//   width: 100%;
+//   height: 100vh;
+//   margin: 0 auto;
+//   padding: 72px 0 0 0;
+// `;
+// export const TitleLoginPage = styled.h2`
+//   font-size: 24px;
+//   color: #1769aa;
+//   padding: 0;
+//   margin: 0;
+// `;
 export const WrapHome = styled.div`
   top: 100px;
   display: flex;

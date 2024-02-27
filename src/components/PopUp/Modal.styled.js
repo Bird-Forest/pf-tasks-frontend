@@ -64,11 +64,12 @@ export const AvatarPopUp = styled.div`
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #f5f5f5;
-    background-color: red;
   }
   .icon-avatar {
-    width: 54px;
-    height: 54px;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background-color: red;
   }
   .visually-hidden {
     position: absolute !important;

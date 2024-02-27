@@ -3,9 +3,9 @@ import { BtnSet, WrapSetting } from './Navigation.styled';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 import { createPortal } from 'react-dom';
-import ModalSetting from 'components/PopUp/ModalSetting';
+import ModalSetting from '../PopUp/ModalSetting';
 
-export default function BtnSetting({ user }) {
+export default function BtnSetting() {
   const [isShow, setIsShow] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
@@ -22,7 +22,6 @@ export default function BtnSetting({ user }) {
           <IoIosArrowDown className="icon-arrow" />
         )}
       </BtnSet>
-
       <WrapSetting style={{ display: isShow ? 'block' : 'none' }}>
         <button className="btn-set" onClick={openModal}>
           Settings

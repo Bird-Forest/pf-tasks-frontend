@@ -86,12 +86,12 @@ export const logoutThunk = createAsyncThunk(
  */
 export const updateAvatar = createAsyncThunk(
   'auth/updateAvatar',
-  async (formData, thunkAPI) => {
+  async (file, thunkAPI) => {
     try {
       const state = thunkAPI.getState();
       const token = state.auth.token;
       setAuthHeader(token);
-      const res = await axios.patch('user/avatar', formData);
+      const res = await axios.patch('user/avatar', file);
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -103,12 +103,12 @@ export const updateAvatar = createAsyncThunk(
  */
 export const updateUser = createAsyncThunk(
   'auth/updateName',
-  async (userData, thunkAPI) => {
+  async (newName, thunkAPI) => {
     try {
       const state = thunkAPI.getState();
       const token = state.auth.token;
       setAuthHeader(token);
-      const res = await axios.patch('user/update/', userData);
+      const res = await axios.patch('user/update/', newName);
       // thunkAPI.dispatch(refreshUser());
       return res.data;
     } catch (error) {
