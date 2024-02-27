@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { RegisterFormWrap } from './RegisterForm.styled';
-import { registerThunk } from 'redux/operations';
+import { registerThunk } from 'redux/user/operations';
 
 export default function RegisterForm() {
   const dispatch = useDispatch();

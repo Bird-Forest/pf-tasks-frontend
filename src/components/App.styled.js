@@ -29,7 +29,7 @@ export const WrapNavigate = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #1769aa;
+  background-color: #9e9e9e;
   width: 100%;
   height: 7vh;
   padding: 0;
@@ -39,7 +39,7 @@ export const WrapOutlet = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #e3f2fd;
+  background-color: #fafafa;
   width: 100%;
   height: 93vh;
   padding: 0;

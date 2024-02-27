@@ -2,7 +2,7 @@ import React from 'react';
 import { FaPenToSquare } from 'react-icons/fa6';
 import { BtnForm, FormTask, InputForm } from './TaskForm.styled';
 import { useDispatch } from 'react-redux';
-import { addTask } from 'redux/tasksSlice';
+import { addTask } from 'redux/tasks/tasksSlice';
 
 export default function TaskForm() {
   const dispatch = useDispatch();

@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import StatusFilter from 'components/Filter/StatusFilter';
-import { logoutThunk } from 'redux/operations';
+import { logoutThunk } from 'redux/user/operations';
 import { BtnLogOut, WrapUserMenu } from './UserMenu.styled';
 import { ImExit } from 'react-icons/im';
 

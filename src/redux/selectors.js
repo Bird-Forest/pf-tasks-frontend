@@ -1,5 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { statusFilters } from './constans';
+import { statusFilters } from './filter/constans';
 
 // state. іт'я ред'юсера із сторі. ім'я слайсу
 export const selectTasks = state => state.tasks.tasks;

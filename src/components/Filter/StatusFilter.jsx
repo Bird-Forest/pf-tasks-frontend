@@ -5,8 +5,8 @@ import {
   selectTaskCount,
   selectTasks,
 } from 'redux/selectors';
-import { setStatusFilter } from 'redux/filtersSlice';
-import { statusFilters } from 'redux/constans';
+import { setStatusFilter } from 'redux/filter/filtersSlice';
+import { statusFilters } from 'redux/filter/constans';
 import {
   BtnAll,
   BtnGreen,

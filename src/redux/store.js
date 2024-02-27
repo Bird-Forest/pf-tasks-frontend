@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { tasksReducer } from './tasksSlice';
-import { filtersReducer } from './filtersSlice';
+import { tasksReducer } from './tasks/tasksSlice';
+import { filtersReducer } from './filter/filtersSlice';
 import {
   persistStore,
   persistReducer,
@@ -12,7 +12,7 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import { authReducer } from './authSlice';
+import { authReducer } from './user/authSlice';
 
 // Persisting token field from auth slice to localstorage
 const authPersistConfig = {

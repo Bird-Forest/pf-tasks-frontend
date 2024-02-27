@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { loginThunk } from 'redux/operations';
+import { loginThunk } from 'redux/user/operations';
 import { LoginFormWrap } from './LoginForm.styled';
 
 export default function LoginForm() {

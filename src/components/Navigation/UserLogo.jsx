@@ -1,11 +1,7 @@
 import React from 'react';
-import {
-  AvatarUser,
-  BtnSetting,
-  NameUser,
-  WrapUser,
-} from './Navigation.styled';
+import { AvatarUser, NameUser, WrapUser } from './Navigation.styled';
 import { FcReddit } from 'react-icons/fc';
+import BtnSetting from './BtnSetting';
 
 export default function UserLogo() {
   const userLulu = 'Lulu';
@@ -16,7 +12,7 @@ export default function UserLogo() {
         <FcReddit className="icon-avatar" />
       </AvatarUser>
       <NameUser>{userLulu}</NameUser>
-      <BtnSetting>Set</BtnSetting>
+      <BtnSetting />
     </WrapUser>
   );
 }

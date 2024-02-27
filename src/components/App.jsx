@@ -6,7 +6,7 @@ import { Route, Routes } from 'react-router-dom';
 import { useAuth } from 'hooks';
 // import { refreshUser } from 'redux/operations';
 // import { Navigation } from './Navigation/Navigation';
-import { refreshThunk } from 'redux/operations';
+import { refreshThunk } from 'redux/user/operations';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
 import { Container } from './App.styled';

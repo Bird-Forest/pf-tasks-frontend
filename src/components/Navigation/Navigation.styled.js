@@ -2,22 +2,28 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const HeaderWrap = styled.header`
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 800px;
+  width: 720px;
   padding: 0 40px;
   margin: 0 auto;
 `;
 export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   text-align: left;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
-  color: white;
-  margin-right: 20px;
+  color: #424242;
+  transition: all 0.3s;
+  /* margin-right: 20px; */
+  .icon-link {
+    width: 36px;
+    height: 36px;
+  }
   &.active {
-    color: #2196f3;
+    color: #ffffff;
   }
 `;
 export const WrapUser = styled.div`
@@ -34,7 +40,7 @@ export const AvatarUser = styled.div`
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background-color: white;
+  background-color: #ffffff;
   padding: 0;
   margin: 0;
   .icon-avatar {
@@ -45,16 +51,92 @@ export const AvatarUser = styled.div`
 export const NameUser = styled.p`
   font-size: 16px;
   font-weight: 500;
-  color: white;
+  color: #ffffff;
 `;
-
-export const BtnSetting = styled.button`
-  /* display: flex; */
+export const BtnSet = styled.button`
   width: 36px;
   height: 36px;
   padding: 0;
   margin: 0;
+  border: none;
+  background-color: #9e9e9e;
+  transition: all 0.3s;
+  cursor: pointer;
+  .icon-arrow {
+    width: 20px;
+    height: 20px;
+    fill: #ffffff;
+  }
 `;
+export const WrapSetting = styled.div`
+  position: absolute;
+  top: 56px;
+  right: 20px;
+  display: block;
+  width: 90px;
+  height: 56px;
+  border-radius: 12px;
+  border: 1px solid #eeeeee;
+  background-color: #ffffff;
+  transition: all 0.3s;
+  padding: 12px 16px;
+  .btn-set {
+    width: 90px;
+    height: 20px;
+    border: none;
+    background-color: #ffffff;
+    font-family: 'Roboto';
+    text-align: left;
+    font-size: 18px;
+    font-weight: 500;
+    color: #424242;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 8px;
+  }
+  .log-out {
+    width: 80px;
+    height: 18px;
+    text-decoration: none;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 500;
+    color: #424242;
+    transition: all 0.3s;
+    padding: 0;
+  }
+`;
+// export const SettingBtn = styled.button`
+//   width: 90px;
+//   height: 40px;
+//   /* text-decoration: none; */
+//   text-align: left;
+//   font-size: 16px;
+//   font-weight: 500;
+//   color: #424242;
+// `;
+// export const NavMenuLink = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   width: 100%;
+//   margin: 0 auto;
+//   padding: 0;
+//   .navigate {
+//     display: none;
+//     visibility: hidden;
+//     text-decoration: none;
+//     font-size: 20px;
+//     font-weight: 700;
+//     color: white;
+//     &.active {
+//       color: #2196f3;
+//     }
+//   }
+
+// `;
+
 // export const AuthMenu = styled.div`
 //   display: flex;
 //   justify-content: space-between;
@@ -139,35 +221,3 @@ export const BtnSetting = styled.button`
 //     visibility: hidden;
 //   }
 // `;
-
-export const NavMenuLink = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;
-  .navigate {
-    display: none;
-    visibility: hidden;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: 700;
-    color: white;
-    &.active {
-      color: #2196f3;
-    }
-  }
-  @media screen and (min-width: 440px) {
-    /* justify-content: center; */
-    width: 440px;
-    .navigate {
-      display: block;
-      visibility: visible;
-      margin-left: 10px;
-    }
-  }
-  @media screen and (min-width: 500px) {
-    width: 480px;
-  }
-`;
