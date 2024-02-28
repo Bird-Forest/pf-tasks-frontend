@@ -5,13 +5,13 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 100%;
+  min-width: 320px;
   height: 100vh;
   padding: 0;
   margin: 0;
-  @media screen and (min-width: 320px) {
-    min-width: 320px;
-  }
+  /* @media screen and (min-width: 767px) {
+    width: 760px;
+  } */
   /* @media screen and (min-width: 440px) {
     min-width: 440px;
   }
@@ -37,7 +37,7 @@ export const WrapNavigate = styled.div`
 export const WrapOutlet = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   background-color: #fafafa;
   width: 100%;
   height: 93vh;

@@ -5,11 +5,16 @@ export const WrapTasksPage = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  /* gap: 8px; */
-  width: 100%;
+  gap: 4px;
+  width: 90%;
+  background-color: #e0e0e0;
   /* height: 100%; */
   margin: 0;
-  padding: 0;
+  padding: 8px;
+  border-radius: 8px;
+  @media screen and (min-width: 767px) {
+    width: 760px;
+  }
   /* @media screen and (min-width: 380px) {
     min-width: 360px;
   }
@@ -29,6 +34,9 @@ export const WrapSignPage = styled.div`
   width: 100%;
   margin: 0;
   padding: 28px 0 0 0;
+  @media screen and (min-width: 767px) {
+    width: 760px;
+  }
 `;
 export const TitleSignPage = styled.h3`
   font-size: 24px;

@@ -4,11 +4,15 @@ import styled from 'styled-components';
 export const HeaderWrap = styled.header`
   position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  width: 720px;
-  padding: 4px 40px;
-  margin: 0 auto;
+  min-width: 320px;
+  padding: 4px 8px;
+  margin: 0;
+
+  @media screen and (min-width: 767px) {
+    width: 760px;
+  }
 `;
 export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
@@ -20,11 +24,29 @@ export const StyledNavLink = styled(NavLink)`
   margin: 0;
   padding: 0;
   .icon-link {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     margin: 4px 0 0 0;
   }
   &.active {
+    color: #ffffff;
+  }
+`;
+export const BtnPlus = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  background-color: #9e9e9e;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  .icon-plus {
+    width: 28px;
+    height: 28px;
     color: #ffffff;
   }
 `;

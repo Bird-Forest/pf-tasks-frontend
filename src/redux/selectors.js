@@ -24,6 +24,8 @@ export const selectVisibleTasks = createSelector(
   (tasks, statusFilter) => {
     // console.log('Calculating visible tasks');
     switch (statusFilter) {
+      case statusFilters.blue:
+        return tasks.filter(task => task.color === '#64b5f6');
       case statusFilters.red:
         return tasks.filter(task => task.color === '#ff5252');
       case statusFilters.yellow:

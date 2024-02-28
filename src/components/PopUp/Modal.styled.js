@@ -50,6 +50,7 @@ export const TitlePopUp = styled.h3`
   text-align: center;
   color: #424242;
 `;
+// ******* SETTING *********
 export const AvatarPopUp = styled.div`
   display: flex;
   justify-content: flex-start;
@@ -145,6 +146,7 @@ export const BtnPopUpSave = styled.button`
     background-color: #e0e0e0;
   }
 `;
+// ********** LOG OUT *********
 export const WrapText = styled.div`
   display: flex;
   flex-direction: column;
@@ -195,5 +197,44 @@ export const WrapBtn = styled.div`
   .delete:hover,
   .delete:focus {
     background-color: #e53935;
+  }
+`;
+// ********* FORMA TASK ********
+export const FormTask = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  /* min-width: 300px; */
+  margin: 20px 0 0 0;
+  padding: 0;
+  .icon-add {
+    width: 60px;
+    height: 60px;
+    fill: #f5f5f5;
+  }
+`;
+export const InputForm = styled.input`
+  display: flex;
+
+  width: 240px;
+  height: 24px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #424242;
+  padding: 10px 12px;
+  border: 2px solid #f5f5f5;
+  border-radius: 10px;
+  outline: none;
+
+  .icon-add {
+    width: 60px;
+    height: 60px;
+    fill: #f5f5f5;
   }
 `;

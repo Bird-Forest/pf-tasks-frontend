@@ -10,10 +10,8 @@ export const Welcom = () => {
       <p>Create a task entry</p>
       <p>Determine task priority</p>
       <p>Mark completed task</p>
-      <p>Sort list by date</p>
       <p>Filter by priority</p>
       <p>Delete task</p>
-
       <NavLink to="/register" className="navigate">
         Sign Up
       </NavLink>

@@ -7,13 +7,8 @@ import {
 } from 'redux/selectors';
 import { setStatusFilter } from 'redux/filter/filtersSlice';
 import { statusFilters } from 'redux/filter/constans';
-import {
-  BtnAll,
-  BtnGreen,
-  BtnRed,
-  BtnYellow,
-} from 'components/UserMenu/UserMenu.styled';
-import { CellDate, CellPriority, CellStatus, TitleTab } from './Filter.styled';
+
+import { CellStatus, TitleTab } from './Filter.styled';
 
 export default function FilterTasks() {
   const dispatch = useDispatch();
@@ -24,38 +19,70 @@ export default function FilterTasks() {
 
   return (
     <TitleTab>
-      <CellDate>
-        <button className="date">Date</button>
-      </CellDate>
       <CellStatus>
-        <button className="status">Sta</button>
+        <div className="wrap">
+          <button
+            className="btn-prior white"
+            selected={filter === statusFilters.all}
+            onClick={() => handleFilterChange(statusFilters.all)}
+          >
+            {tasks.length}
+          </button>
+          <button
+            className="btn-prior blue"
+            selected={filter === statusFilters.blue}
+            onClick={() => handleFilterChange(statusFilters.blue)}
+          >
+            {count.blue}
+          </button>
+          <button
+            className="btn-prior red"
+            selected={filter === statusFilters.red}
+            onClick={() => handleFilterChange(statusFilters.red)}
+          >
+            {count.red}
+          </button>
+          <button
+            className="btn-prior yellow"
+            selected={filter === statusFilters.yellow}
+            onClick={() => handleFilterChange(statusFilters.yellow)}
+          >
+            {count.yellow}
+          </button>
+          <button
+            className="btn-prior green"
+            selected={filter === statusFilters.green}
+            onClick={() => handleFilterChange(statusFilters.green)}
+          >
+            {count.green}
+          </button>
+        </div>
       </CellStatus>
-      <CellPriority>
-        <BtnAll
-          selected={filter === statusFilters.all}
-          onClick={() => handleFilterChange(statusFilters.all)}
-        >
-          {tasks.length}
-        </BtnAll>
-        <BtnRed
-          selected={filter === statusFilters.red}
-          onClick={() => handleFilterChange(statusFilters.red)}
-        >
-          {count.red}
-        </BtnRed>
-        <BtnYellow
-          selected={filter === statusFilters.yellow}
-          onClick={() => handleFilterChange(statusFilters.yellow)}
-        >
-          {count.yellow}
-        </BtnYellow>
-        <BtnGreen
-          selected={filter === statusFilters.green}
-          onClick={() => handleFilterChange(statusFilters.green)}
-        >
-          {count.green}
-        </BtnGreen>
-      </CellPriority>
     </TitleTab>
   );
 }
+
+//  <BtnAll
+//           selected={filter === statusFilters.all}
+//           onClick={() => handleFilterChange(statusFilters.all)}
+//         >
+//           {tasks.length}
+//         </BtnAll>
+//         <BtnRed
+//           selected={filter === statusFilters.red}
+//           onClick={() => handleFilterChange(statusFilters.red)}
+//         >
+//           {count.red}
+//         </BtnRed>
+//         <BtnYellow
+//           selected={filter === statusFilters.yellow}
+//           onClick={() => handleFilterChange(statusFilters.yellow)}
+//         >
+//           {count.yellow}
+//         </BtnYellow>
+//         <BtnGreen
+//           selected={filter === statusFilters.green}
+//           onClick={() => handleFilterChange(statusFilters.green)}
+//         >
+//           {count.green}
+//         </BtnGreen>
