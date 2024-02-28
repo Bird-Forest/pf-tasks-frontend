@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
 import { BtnSet, WrapSetting } from './Navigation.styled';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
-import { Link } from 'react-router-dom';
 import { createPortal } from 'react-dom';
 import ModalSetting from '../PopUp/ModalSetting';
+import ModalLogOut from '../PopUp/ModalLogOut';
 
 export default function BtnSetting() {
   const [isShow, setIsShow] = useState(false);
-  const [showModal, setShowModal] = useState(false);
+  const [showSetting, setShowSetting] = useState(false);
+  const [showLogOut, setShowLogOut] = useState(false);
 
-  const openModal = () => {
-    setShowModal(true);
+  const openModalSetting = () => {
+    setShowSetting(true);
+  };
+  const openModalLogOut = () => {
+    setShowLogOut(true);
   };
 
   return (
@@ -23,15 +27,22 @@ export default function BtnSetting() {
         )}
       </BtnSet>
       <WrapSetting style={{ display: isShow ? 'block' : 'none' }}>
-        <button className="btn-set" onClick={openModal}>
+        <button className="btn-set" onClick={openModalSetting}>
           Settings
         </button>
-        {showModal &&
+        {showSetting &&
           createPortal(
-            <ModalSetting onClose={() => setShowModal(false)} />,
+            <ModalSetting onClose={() => setShowSetting(false)} />,
             document.body
           )}
-        <Link className="log-out">LogOut</Link>
+        <button className="btn-set" onClick={openModalLogOut}>
+          LogOut
+        </button>
+        {showLogOut &&
+          createPortal(
+            <ModalLogOut onClose={() => setShowLogOut(false)} />,
+            document.body
+          )}
       </WrapSetting>
     </div>
   );

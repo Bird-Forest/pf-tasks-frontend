@@ -145,3 +145,55 @@ export const BtnPopUpSave = styled.button`
     background-color: #e0e0e0;
   }
 `;
+export const WrapText = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  color: #424242;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 40px;
+`;
+export const WrapBtn = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  .btn-log-out {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    width: 224px;
+    height: 48px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    padding: 10px 12px;
+    transition: all 0.3s;
+    cursor: pointer;
+    outline: none;
+    margin: 0;
+  }
+  .cansel {
+    color: #424242;
+    background-color: #f5f5f5;
+    border: 4px solid #eeeeee;
+  }
+  .cansel:hover,
+  .cansel:focus {
+    background-color: #e0e0e0;
+  }
+  .delete {
+    color: #424242;
+    background-color: #ff5252;
+    border: 4px solid #ef5350;
+  }
+  .delete:hover,
+  .delete:focus {
+    background-color: #e53935;
+  }
+`;

@@ -7,7 +7,7 @@ export const HeaderWrap = styled.header`
   justify-content: space-between;
   align-items: center;
   width: 720px;
-  padding: 0 40px;
+  padding: 4px 40px;
   margin: 0 auto;
 `;
 export const StyledNavLink = styled(NavLink)`
@@ -17,10 +17,12 @@ export const StyledNavLink = styled(NavLink)`
   font-weight: 700;
   color: #424242;
   transition: all 0.3s;
-  /* margin-right: 20px; */
+  margin: 0;
+  padding: 0;
   .icon-link {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
+    margin: 4px 0 0 0;
   }
   &.active {
     color: #ffffff;
@@ -37,15 +39,15 @@ export const AvatarUser = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 44px;
-  height: 44px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background-color: #ffffff;
   padding: 0;
   margin: 0;
   .icon-avatar {
-    width: 44px;
-    height: 44px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     background-color: red;
   }
