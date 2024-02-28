@@ -1,7 +1,8 @@
+import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { WrapAuthNav } from './AuthNav.styled';
+import { WrapAuthNav } from './Welcom.styled';
 
-export const AuthNav = () => {
+export const Welcom = () => {
   return (
     <WrapAuthNav>
       <p>My tasks application</p>
@@ -14,10 +15,10 @@ export const AuthNav = () => {
       <p>Delete task</p>
 
       <NavLink to="/register" className="navigate">
-        SignUp
+        Sign Up
       </NavLink>
       <NavLink to="/login" className="navigate">
-        SignIn
+        Sign In
       </NavLink>
     </WrapAuthNav>
   );

@@ -9,8 +9,8 @@ export const WrapList = styled.ul`
   width: 100%;
   padding: 0;
   margin: 80px auto;
-  @media screen and (min-width: 380px) {
-    min-width: 360px;
+  @media screen and (min-width: 320px) {
+    min-width: 320px;
   }
   @media screen and (min-width: 440px) {
     /* min-width: 420px; */

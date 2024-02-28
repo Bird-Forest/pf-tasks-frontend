@@ -12,7 +12,6 @@ import {
 } from './Task.styled';
 import { BsFillTrash3Fill } from 'react-icons/bs';
 import { useDispatch } from 'react-redux';
-import { nanoid } from '@reduxjs/toolkit';
 import { deleteTask, changeTaskColor } from 'redux/tasks/tasksSlice';
 import { BsEmojiWink } from 'react-icons/bs';
 import { FaCogs } from 'react-icons/fa';
@@ -26,7 +25,7 @@ export default function MyTask({ task }) {
   };
 
   return (
-    <WrapTask id={nanoid()}>
+    <WrapTask>
       <DateTask>{task.date}</DateTask>
       <StatusTask>{task.completed}</StatusTask>
       <TextTask style={{ backgroundColor: task.color }}>

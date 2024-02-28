@@ -9,8 +9,7 @@ export const Container = styled.div`
   height: 100vh;
   padding: 0;
   margin: 0;
-  /* background-color: #e3f2fd; */
-  @media screen and (min-width: 380px) {
+  @media screen and (min-width: 320px) {
     min-width: 320px;
   }
   /* @media screen and (min-width: 440px) {
@@ -21,11 +20,11 @@ export const Container = styled.div`
   } */
 `;
 export const WrapNavigate = styled.div`
-  position: fixed;
+  /* position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
-  right: 0;
+  right: 0; */
   display: flex;
   justify-content: center;
   align-items: center;

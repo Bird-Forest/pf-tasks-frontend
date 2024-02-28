@@ -26,11 +26,12 @@ export default function FormSignUp() {
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={(values, { setSubmitting, resetForm }) => {
+          console.log(values);
           setTimeout(() => {
             alert(JSON.stringify(values, null, 2));
             setSubmitting(true);
             resetForm();
-          }, 200);
+          }, 100);
         }}
       >
         {props => (

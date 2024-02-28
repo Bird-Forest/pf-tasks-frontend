@@ -4,7 +4,7 @@ export const WrapUserMenu = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: 230px;
+  /* width: 230px; */
   gap: 10px;
   margin: 0;
   @media screen and (min-width: 380px) {

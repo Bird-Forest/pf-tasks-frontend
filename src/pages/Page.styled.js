@@ -5,12 +5,12 @@ export const WrapTasksPage = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 8px;
+  /* gap: 8px; */
   width: 100%;
-  height: 100%;
-  margin: 64px auto;
+  /* height: 100%; */
+  margin: 0;
   padding: 0;
-  @media screen and (min-width: 380px) {
+  /* @media screen and (min-width: 380px) {
     min-width: 360px;
   }
   @media screen and (min-width: 440px) {
@@ -18,7 +18,7 @@ export const WrapTasksPage = styled.div`
   }
   @media screen and (min-width: 500px) {
     width: 480px;
-  }
+  } */
 `;
 export const WrapSignPage = styled.div`
   display: flex;

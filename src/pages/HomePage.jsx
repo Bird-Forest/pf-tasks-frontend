@@ -1,13 +1,13 @@
 // import TaskList from '../components/Task/TaskList';
 import React from 'react';
 // import { WrapHome } from './Page.styled';
-import { AuthNav } from '../components/AuthNav/AuthNav';
+import { Welcom } from '../components/Welcom/Welcom';
 import { WrapOutlet } from '../components/App.styled';
 
 export default function HomePage() {
   return (
     <WrapOutlet>
-      <AuthNav />
+      <Welcom />
     </WrapOutlet>
   );
 }
