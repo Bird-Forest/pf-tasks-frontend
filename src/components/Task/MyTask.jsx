@@ -11,11 +11,12 @@ import {
 } from './Task.styled';
 import { BsFillTrash3Fill } from 'react-icons/bs';
 import { useDispatch } from 'react-redux';
-import { deleteTask, changeTaskColor } from 'redux/tasks/tasksSlice';
+// import { deleteTask, changeTaskColor } from '../../redux/tasks/tasksSlice';
 import { BsEmojiWink } from 'react-icons/bs';
 import { FaCogs } from 'react-icons/fa';
 // import { BsHandThumbsUpFill } from 'react-icons/bs';
 import { BsHandThumbsUp } from 'react-icons/bs';
+import { changeTaskColor, deleteTask } from 'redux/tasks/servise';
 // import { selectStatusFilter } from 'redux/selectors';
 // <BsHandThumbsUpFill />
 
@@ -45,7 +46,6 @@ export default function MyTask({ task }) {
               onClick={() =>
                 dispatch(
                   changeTaskColor({
-                    completed: true,
                     color: '#64b5f6',
                     id: task.id,
                   })

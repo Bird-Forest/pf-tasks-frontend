@@ -4,20 +4,22 @@ import { statusFilters } from './filter/constans';
 // state. іт'я ред'юсера із сторі. ім'я слайсу
 export const selectTasks = state => state.tasks.tasks;
 export const selectIsLoading = state => state.tasks.isLoading;
-export const selectError = state => state.tasks.error;
-export const selectStatusFilter = state => state.filters.status;
+export const selectErrorTasks = state => state.tasks.error;
+export const selectStatusFilter = state => state.filter.status;
 
-// export const selectIsLoggedIn = state => state.auth.isLoggedIn;
-// export const selectUser = state => state.auth.user;
+export const selectUser = state => state.auth.user;
+export const selectToken = state => state.auth.token;
+export const selectIsLoggedIn = state => state.auth.isLoggedIn;
 export const selectIsRefreshing = state => state.auth.isRefreshing;
+export const selectErrorUser = state => state.auth.error;
 
-export const selectAuth = state => state.auth;
-export const selectToken = createSelector(selectAuth, auth => auth.token);
-export const selectUser = createSelector(selectAuth, auth => auth.user);
-export const selectIsLoggedIn = createSelector(
-  selectAuth,
-  auth => auth.isLoggedIn
-);
+// export const selectAuth = state => state.auth;
+
+// export const selectUser = createSelector(selectAuth, auth => auth.user);
+// export const selectIsLoggedIn = createSelector(
+//   selectAuth,
+//   auth => auth.isLoggedIn
+// );
 
 export const selectVisibleTasks = createSelector(
   [selectTasks, selectStatusFilter],
@@ -41,7 +43,9 @@ export const selectTaskCount = createSelector([selectTasks], tasks => {
   // console.log('Calculating task count. Now memoized!');
   return tasks.reduce(
     (count, task) => {
-      if (task.color === '#ff5252') {
+      if (task.color === '#64b5f6') {
+        count.blue += 1;
+      } else if (task.color === '#ff5252') {
         count.red += 1;
       } else if (task.color === '#ffee58') {
         count.yellow += 1;
@@ -50,7 +54,7 @@ export const selectTaskCount = createSelector([selectTasks], tasks => {
       }
       return count;
     },
-    { red: 0, yellow: 0, green: 0 }
+    { blue: 0, red: 0, yellow: 0, green: 0 }
   );
 });
 

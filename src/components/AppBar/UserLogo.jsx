@@ -1,7 +1,6 @@
 import React from 'react';
 import { AvatarUser, NameUser, WrapUser } from './Navigation.styled';
 import { FcReddit } from 'react-icons/fc';
-import BtnSetting from './BtnSetting';
 import { useSelector } from 'react-redux';
 import { selectUser } from 'redux/selectors';
 
@@ -16,7 +15,7 @@ export default function UserLogo() {
         {avatar === null ? (
           <FcReddit className="icon-avatar" />
         ) : (
-          <img src={avatar} alt="avatar" />
+          <img src={avatar} alt="avatar" className="img-avatar" />
         )}
       </AvatarUser>
       <NameUser>
@@ -26,7 +25,6 @@ export default function UserLogo() {
           <p className="name-text">{name}</p>
         )}
       </NameUser>
-      <BtnSetting />
     </WrapUser>
   );
 }

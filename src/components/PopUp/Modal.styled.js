@@ -53,17 +53,18 @@ export const TitlePopUp = styled.h3`
 // ******* SETTING *********
 export const AvatarPopUp = styled.div`
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
   align-items: center;
   gap: 8px;
   .avatar-img {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 68px;
-    height: 68px;
+    width: 72px;
+    height: 72px;
     border-radius: 50%;
-    object-fit: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
     border: 2px solid #f5f5f5;
   }
   .icon-avatar {

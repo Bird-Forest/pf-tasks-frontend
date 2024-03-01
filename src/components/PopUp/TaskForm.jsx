@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { FaPenToSquare } from 'react-icons/fa6';
 // import { BtnForm, FormTask, InputForm } from './TaskForm.styled';
 import { useDispatch } from 'react-redux';
-import { addTask } from 'redux/tasks/tasksSlice';
+// import { addTask } from '../../redux/tasks/tasksSlice';
 import { IoCloseSharp } from 'react-icons/io5';
 import {
   Backdrop,
@@ -13,6 +13,7 @@ import {
   TitlePopUp,
   WrapPopUp,
 } from './Modal.styled';
+import { addTask } from 'redux/tasks/servise';
 
 export default function TaskForm({ onClose }) {
   const dispatch = useDispatch();
@@ -33,13 +34,15 @@ export default function TaskForm({ onClose }) {
 
   const handleSubmit = event => {
     event.preventDefault();
-    const title = event.target.elements.title.value;
-    if (title !== '') {
-      dispatch(addTask(title));
+    const text = event.target.elements.title.value;
+    const newTask = { title: text };
+    console.log(newTask);
+    if (text !== '') {
+      dispatch(addTask(newTask));
       event.target.reset();
-      return;
+      onClose();
     }
-    alert('Task cannot be empty. Enter some text!');
+    // return alert('Task cannot be empty. Enter some text!');
   };
   return (
     <Backdrop onClick={onClose}>

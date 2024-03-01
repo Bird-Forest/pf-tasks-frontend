@@ -4,7 +4,7 @@ export const WrapList = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   gap: 4px;
   width: 100%;
   padding: 0;
@@ -233,4 +233,24 @@ export const BtnDelete = styled.button`
       height: 24px;
     }
   } */
+`;
+export const WrapEmpty = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+  padding: 0;
+  margin: 20px 0;
+  .empty-text {
+    font-size: 20px;
+    font-weight: 500;
+    color: #424242;
+  }
+  .icon-lizard {
+    width: 160px;
+    height: 160px;
+    fill: #424242;
+  }
 `;

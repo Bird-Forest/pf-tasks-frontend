@@ -9,13 +9,12 @@ import {
   updateUser,
 } from './operations';
 
-// const defaultAvatar = <FcReddit className="icon-avatar" />;
-
 const initialState = {
   user: { _id: null, name: null, email: null, avatarURL: null },
   token: null,
   isLoggedIn: false,
   isRefreshing: false,
+  error: null,
 };
 
 const handlePending = state => {
@@ -24,7 +23,7 @@ const handlePending = state => {
 
 const handleRejected = (state, action) => {
   state.isLoading = false;
-  state.error = action.payload;
+  state.error = action.payload.error;
 };
 
 const authSlice = createSlice({
@@ -50,25 +49,29 @@ const authSlice = createSlice({
       })
       .addCase(loginThunk.rejected, handleRejected)
 
-      // ---------- REFRESH USER ----------------
-      .addCase(refreshThunk.pending, handlePending)
-      .addCase(refreshThunk.fulfilled, (state, action) => {
-        state.user = action.payload;
-        state.isLoggedIn = true;
-        state.isRefreshing = false;
-      })
-      .addCase(refreshThunk.rejected, handleRejected)
-
       // ---------- LOGOUT USER ----------------
       .addCase(logoutThunk.pending, handlePending)
-      .addCase(logoutThunk.fulfilled, (state, action) => {
-        // state.user = { name: null, email: null };
-        state.user = action.payload;
+      .addCase(logoutThunk.fulfilled, state => {
+        state.user = { name: null, email: null, avatarURL: null };
+        // state.user = action.payload;
         state.token = null;
         state.isLoggedIn = false;
         // return initialState
       })
       .addCase(logoutThunk.rejected, handleRejected)
+
+      // ---------- REFRESH USER ----------------
+      .addCase(refreshThunk.pending, state => {
+        state.isRefreshing = true;
+      })
+      .addCase(refreshThunk.fulfilled, (state, action) => {
+        state.user = action.payload;
+        state.isLoggedIn = true;
+        state.isRefreshing = false;
+      })
+      .addCase(refreshThunk.rejected, state => {
+        state.isRefreshing = false;
+      })
 
       // ---------- USER AVATAR ----------------
       .addCase(updateAvatar.pending, handlePending)

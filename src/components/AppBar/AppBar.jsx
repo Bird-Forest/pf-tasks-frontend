@@ -6,9 +6,13 @@ import { FaHome } from 'react-icons/fa';
 import { HiPlus } from 'react-icons/hi';
 import { createPortal } from 'react-dom';
 import TaskForm from 'components/PopUp/TaskForm';
+import { useAuth } from '../../hooks';
+import BtnSetting from './BtnSetting';
 
 export default function AppBar() {
   const [newTask, setNewTask] = useState(false);
+  const { isLoggedIn } = useAuth();
+
   const openModalNewTask = () => {
     setNewTask(true);
   };
@@ -18,16 +22,21 @@ export default function AppBar() {
         <StyledNavLink to="/">
           <FaHome className="icon-link" />
         </StyledNavLink>
-        <StyledNavLink to="/tasks">Tasks</StyledNavLink>
-        <BtnPlus onClick={openModalNewTask}>
-          <HiPlus className="icon-plus" />
-        </BtnPlus>
-        {newTask &&
-          createPortal(
-            <TaskForm onClose={() => setNewTask(false)} />,
-            document.body
-          )}
+        {isLoggedIn && (
+          <>
+            <StyledNavLink to="/tasks">Tasks</StyledNavLink>
+            <BtnPlus onClick={openModalNewTask}>
+              <HiPlus className="icon-plus" />
+            </BtnPlus>
+            {newTask &&
+              createPortal(
+                <TaskForm onClose={() => setNewTask(false)} />,
+                document.body
+              )}
+          </>
+        )}
         <UserLogo />
+        {isLoggedIn && <BtnSetting />}
       </HeaderWrap>
     </WrapNavigate>
   );

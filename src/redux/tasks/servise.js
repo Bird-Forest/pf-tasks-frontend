@@ -4,7 +4,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 // ******************************************************************************
 
 const tasksURL = axios.create({
-  baseURL: 'https://653aaa722e42fd0d54d44bad.mockapi.io/api/v1/',
+  baseURL: 'http://localhost:3001/api',
 });
 
 export const fetchTasks = createAsyncThunk(
@@ -25,9 +25,9 @@ export const fetchTasks = createAsyncThunk(
 );
 export const addTask = createAsyncThunk(
   'tasks/addTask',
-  async (title, thunkAPI) => {
+  async (newTask, thunkAPI) => {
     try {
-      const response = await tasksURL.post('/tasks', { title });
+      const response = await tasksURL.post('/tasks', newTask);
       console.log(response.data);
       return response.data;
     } catch (e) {
@@ -47,6 +47,20 @@ export const deleteTask = createAsyncThunk(
     }
   }
 );
+
+export const changeTaskColor = createAsyncThunk(
+  'tasks/toggleCompleted',
+  async (task, thunkAPI) => {
+    try {
+      const response = await tasksURL.put(`/tasks/${task.id}`);
+      console.log(response.data);
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);
+
 export const toggleCompleted = createAsyncThunk(
   'tasks/toggleCompleted',
   async (task, thunkAPI) => {

@@ -63,7 +63,7 @@ export const InputWrap = styled.div`
     border: 2px solid #ff1744;
   }
   .label-input {
-    font-size: 16px;
+    font-size: 12px;
     text-align: center;
     color: #616161;
     background-color: #ffffff;
@@ -91,9 +91,9 @@ export const InputWrap = styled.div`
 `;
 export const ShowPasswordBtn = styled.button`
   position: absolute;
-  top: 44px;
+  top: 40px;
   right: 8px;
-  transform: translateY(-45%);
+  transform: translateY(-50%);
   background-color: transparent;
   border: none;
   cursor: pointer;

@@ -4,6 +4,8 @@ import * as Yup from 'yup';
 import InputText from './InputText';
 import InputPassword from './InputPassword';
 import { MyStyled } from './Form.styled';
+import { useDispatch } from 'react-redux';
+import { registerThunk } from 'redux/user/operations';
 
 const validationSchema = Yup.object({
   name: Yup.string()
@@ -20,18 +22,16 @@ const initialValues = {
 };
 
 export default function FormSignUp() {
+  const dispatch = useDispatch();
   return (
     <MyStyled>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={(values, { setSubmitting, resetForm }) => {
-          console.log(values);
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(true);
-            resetForm();
-          }, 100);
+          setSubmitting(true);
+          dispatch(registerThunk(values));
+          resetForm();
         }}
       >
         {props => (

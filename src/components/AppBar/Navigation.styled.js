@@ -7,7 +7,7 @@ export const HeaderWrap = styled.header`
   justify-content: space-around;
   align-items: center;
   min-width: 320px;
-  padding: 4px 8px;
+  padding: 4px 16px;
   margin: 0;
 
   @media screen and (min-width: 767px) {
@@ -17,7 +17,8 @@ export const HeaderWrap = styled.header`
 export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   text-align: left;
-  font-size: 24px;
+  font-size: clamp(16px, 0.667rem + 1.67vw, 24px);
+
   font-weight: 700;
   color: #424242;
   transition: all 0.3s;
@@ -61,15 +62,21 @@ export const AvatarUser = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-color: #ffffff;
+  // width: 34px;
+  // height: 34px;
+  // border-radius: 50%;
+  // background-color: #ffffff;
   padding: 0;
   margin: 0;
+  .img-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
   .icon-avatar {
-    width: 36px;
-    height: 36px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     background-color: red;
   }
@@ -79,12 +86,12 @@ export const NameUser = styled.div`
   justify-content: center;
   align-items: center;
   .name-text {
-    font-size: 24px;
+    font-size: clamp(16px, 0.833rem + 0.83vw, 20px);
     font-weight: 500;
     color: #ffffff;
   }
   .default {
-    font-size: 32px;
+    font-size: clamp(16px, 0.833rem + 0.83vw, 20px);
     font-weight: 500;
     color: #ffffff;
   }
@@ -122,7 +129,7 @@ export const WrapSetting = styled.div`
     height: 20px;
     border: none;
     background-color: #ffffff;
-    font-family: 'Roboto';
+    // font-family: 'Roboto';
     text-align: left;
     font-size: 18px;
     font-weight: 500;
@@ -144,117 +151,3 @@ export const WrapSetting = styled.div`
     padding: 0;
   }
 `;
-// export const SettingBtn = styled.button`
-//   width: 90px;
-//   height: 40px;
-//   /* text-decoration: none; */
-//   text-align: left;
-//   font-size: 16px;
-//   font-weight: 500;
-//   color: #424242;
-// `;
-// export const NavMenuLink = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   width: 100%;
-//   margin: 0 auto;
-//   padding: 0;
-//   .navigate {
-//     display: none;
-//     visibility: hidden;
-//     text-decoration: none;
-//     font-size: 20px;
-//     font-weight: 700;
-//     color: white;
-//     &.active {
-//       color: #2196f3;
-//     }
-//   }
-
-// `;
-
-// export const AuthMenu = styled.div`
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   min-width: 300px;
-//   padding: 0 10px;
-//   /* margin: 0 auto; */
-//   @media screen and (min-width: 380px) {
-//     min-width: 360px;
-//   }
-//   @media screen and (min-width: 440px) {
-//     min-width: 420px;
-//   }
-//   @media screen and (min-width: 500px) {
-//     width: 480px;
-//   }
-// `;
-
-// export const LogMenu = styled.div`
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   min-width: 300px;
-//   /* padding: 0 10px; */
-//   /* margin: 0 auto; */
-//   @media screen and (min-width: 380px) {
-//     min-width: 360px;
-//   }
-//   @media screen and (min-width: 440px) {
-//     min-width: 420px;
-//   }
-//   @media screen and (min-width: 500px) {
-//     width: 480px;
-//     /* padding: 0 20px; */
-//   }
-// `;
-// export const MobileMenu = styled.div`
-//   display: block;
-//   @media screen and (min-width: 440px) {
-//     display: none;
-//   }
-// `;
-// export const BtnMenu = styled.button`
-//   display: block;
-//   background-color: #1769aa;
-//   border: #1769aa;
-//   width: 36px;
-//   height: 36px;
-//   margin: 0 0 0 10px;
-//   padding: 0;
-//   .icon-menu {
-//     background-color: #1769aa;
-//     width: 36px;
-//     height: 36px;
-//     fill: white;
-//   }
-//   @media screen and (min-width: 440px) {
-//     display: none;
-//   }
-// `;
-// export const TabletMenu = styled.div`
-//   display: none;
-//   @media screen and (min-width: 440px) {
-//     display: block;
-//   }
-// `;
-
-// export const WrapMenu = styled.div`
-//   position: absolute;
-//   top: 64px;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: flex-start;
-//   align-items: center;
-//   width: 100vw;
-//   height: 100vh;
-//   background-color: #4dabf5;
-//   margin: 0;
-//   padding: 0;
-//   @media screen and (min-width: 440px) {
-//     display: none;
-//     visibility: hidden;
-//   }
-// `;

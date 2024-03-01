@@ -1,5 +1,6 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { tasksReducer } from './tasks/tasksSlice';
+import { authReducer } from './user/authSlice';
 import { filtersReducer } from './filter/filtersSlice';
 import {
   persistStore,
@@ -12,29 +13,30 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import { authReducer } from './user/authSlice';
 
 // Persisting token field from auth slice to localstorage
 const authPersistConfig = {
   key: 'auth',
   storage,
-  whitelist: ['token'],
+  whitelist: ['token', 'user'],
   //   blacklist: ['filter'],
 };
 
-const tasksPersistConfig = {
-  key: 'tasks',
-  storage,
-  whitelist: ['tasks'],
-  //   blacklist: ['filter'],
-};
+// const tasksPersistConfig = {
+//   key: 'tasks',
+//   storage,
+//   whitelist: ['tasks'],
+//   //   blacklist: ['filter'],
+// };
+
+const rootReducer = combineReducers({
+  auth: persistReducer(authPersistConfig, authReducer),
+  tasks: tasksReducer,
+  filter: filtersReducer,
+});
 
 export const store = configureStore({
-  reducer: {
-    auth: persistReducer(authPersistConfig, authReducer),
-    tasks: persistReducer(tasksPersistConfig, tasksReducer),
-    filters: filtersReducer,
-  },
+  reducer: rootReducer,
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {

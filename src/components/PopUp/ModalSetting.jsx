@@ -36,9 +36,11 @@ export default function ModalSetting({ onClose }) {
   }, [onClose]);
 
   const uploadFile = evt => {
-    const file = evt.target.files;
-    console.log(file);
-    dispatch(updateAvatar(file));
+    const picture = evt.target.files[0];
+    const formData = new FormData();
+    formData.append('avatar', picture);
+    console.log(formData);
+    dispatch(updateAvatar(formData));
   };
 
   const updateName = evt => {
@@ -55,21 +57,18 @@ export default function ModalSetting({ onClose }) {
         </BtnClose>
         <TitlePopUp>Setting</TitlePopUp>
         <AvatarPopUp>
-          <div className="avatar-img">
-            {avatar === null ? (
-              <FcReddit className="icon-avatar" />
-            ) : (
-              // <img src={`${avatar}`} alt="avatar" />
-              <img src={avatar} alt="avatar" />
-            )}
-          </div>
+          {avatar === null ? (
+            <FcReddit className="icon-avatar" />
+          ) : (
+            <img src={avatar} alt="avatar" className="avatar-img" />
+          )}
           <input
             type="file"
             id="fileElem"
             name="fileElem"
             // value={file}
             // multiple
-            // accept="image/*"
+            accept="image/*"
             // style={{ display: 'none' }}
             className="visually-hidden"
             onClick={uploadFile}
