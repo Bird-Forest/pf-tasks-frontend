@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/pf-tasks-frontend/static/css/main.3c0c9886.css",
-    "main.js": "/pf-tasks-frontend/static/js/main.01466aed.js",
+    "main.js": "/pf-tasks-frontend/static/js/main.cb4bb713.js",
     "static/js/244.129fe0b0.chunk.js": "/pf-tasks-frontend/static/js/244.129fe0b0.chunk.js",
     "static/js/64.0e4c3694.chunk.js": "/pf-tasks-frontend/static/js/64.0e4c3694.chunk.js",
     "static/js/986.f1b3af1e.chunk.js": "/pf-tasks-frontend/static/js/986.f1b3af1e.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/333.53558f73.chunk.js": "/pf-tasks-frontend/static/js/333.53558f73.chunk.js",
     "index.html": "/pf-tasks-frontend/index.html",
     "main.3c0c9886.css.map": "/pf-tasks-frontend/static/css/main.3c0c9886.css.map",
-    "main.01466aed.js.map": "/pf-tasks-frontend/static/js/main.01466aed.js.map",
+    "main.cb4bb713.js.map": "/pf-tasks-frontend/static/js/main.cb4bb713.js.map",
     "244.129fe0b0.chunk.js.map": "/pf-tasks-frontend/static/js/244.129fe0b0.chunk.js.map",
     "64.0e4c3694.chunk.js.map": "/pf-tasks-frontend/static/js/64.0e4c3694.chunk.js.map",
     "986.f1b3af1e.chunk.js.map": "/pf-tasks-frontend/static/js/986.f1b3af1e.chunk.js.map",
@@ -20,6 +20,6 @@
   },
   "entrypoints": [
     "static/css/main.3c0c9886.css",
-    "static/js/main.01466aed.js"
+    "static/js/main.cb4bb713.js"
   ]
 }
