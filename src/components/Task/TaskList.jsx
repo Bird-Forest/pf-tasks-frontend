@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { WrapList } from './Task.styled';
 import {
   selectIsLoading,
-  selectVisibleTasks,
   selectErrorTasks,
+  selectTasks,
 } from 'redux/selectors';
 import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
@@ -15,22 +15,23 @@ export default function TaskList() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectErrorTasks);
-  const newTasks = useSelector(selectVisibleTasks);
+  // const newTasks = useSelector(selectVisibleTasks);
+  const tasks = useSelector(selectTasks);
 
-  console.log(newTasks);
+  console.log(tasks);
 
   useEffect(() => {
     dispatch(fetchTasks());
   }, [dispatch]);
 
-  const showArr = Array.isArray(newTasks) && newTasks.length !== 0;
+  const showArr = Array.isArray(tasks) && tasks.length !== 0;
   return (
     <>
       {isLoading && <p>Loading tasks...</p>}
       {error && <p>{error}</p>}
       <WrapList>
         {showArr ? (
-          newTasks.map(task => <MyTask task={task} key={nanoid()} />)
+          tasks.map(task => <MyTask task={task} key={nanoid()} />)
         ) : (
           <TaskListEmpty />
         )}

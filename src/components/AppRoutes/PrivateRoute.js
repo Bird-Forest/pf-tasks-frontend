@@ -12,7 +12,17 @@ import { useAuth } from 'hooks';
 
 //   return shouldRedirect ? <Navigate to={redirectTo} /> : Component;
 // };
-export const PrivateRoute = ({ children, redirectTo = '/' }) => {
-  const { isLoggedIn } = useAuth();
-  return isLoggedIn ? children : <Navigate to={redirectTo} replace />;
+// export const PrivateRoute = ({ children, redirectTo = '/login' }) => {
+//   const { isLoggedIn, token } = useAuth();
+//   return isLoggedIn && token !== null ? (
+//     children
+//   ) : (
+//     <Navigate to={redirectTo} replace />
+//   );
+// };
+export const PrivateRoute = ({ component: Component, redirectTo = '/' }) => {
+  const { isLoggedIn, isRefreshing } = useAuth();
+  const shouldRedirect = !isLoggedIn && !isRefreshing;
+
+  return shouldRedirect ? <Navigate to={redirectTo} /> : Component;
 };

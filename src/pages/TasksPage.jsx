@@ -17,13 +17,15 @@ export default function TasksPage() {
   // }, [dispatch]);
 
   return (
-    <WrapOutlet>
-      <WrapTasksPage>
-        {/* <div>{isLoading && 'Request in progress...'}</div> */}
-        {/* <TaskForm /> */}
-        <FilterTasks />
-        <TaskList />
-      </WrapTasksPage>
-    </WrapOutlet>
+    <>
+      <WrapOutlet>
+        <WrapTasksPage>
+          {/* <div>{isLoading && 'Request in progress...'}</div> */}
+          {/* <TaskForm /> */}
+          <FilterTasks />
+          <TaskList />
+        </WrapTasksPage>
+      </WrapOutlet>
+    </>
   );
 }

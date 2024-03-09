@@ -39,24 +39,24 @@ export const selectVisibleTasks = createSelector(
     }
   }
 );
-export const selectTaskCount = createSelector([selectTasks], tasks => {
-  // console.log('Calculating task count. Now memoized!');
-  return tasks.reduce(
-    (count, task) => {
-      if (task.color === '#64b5f6') {
-        count.blue += 1;
-      } else if (task.color === '#ff5252') {
-        count.red += 1;
-      } else if (task.color === '#ffee58') {
-        count.yellow += 1;
-      } else if (task.color === '#00e676') {
-        count.green += 1;
-      }
-      return count;
-    },
-    { blue: 0, red: 0, yellow: 0, green: 0 }
-  );
-});
+// export const selectTaskCount = createSelector([selectTasks], tasks => {
+//   // console.log('Calculating task count. Now memoized!');
+//   return tasks.reduce(
+//     (count, task) => {
+//       if (task.color === '#64b5f6') {
+//         count.blue += 1;
+//       } else if (task.color === '#ff5252') {
+//         count.red += 1;
+//       } else if (task.color === '#ffee58') {
+//         count.yellow += 1;
+//       } else if (task.color === '#00e676') {
+//         count.green += 1;
+//       }
+//       return count;
+//     },
+//     { blue: 0, red: 0, yellow: 0, green: 0 }
+//   );
+// });
 
 // Мемонізація елементів
 // const selectProductsStore = state => state.productsStore;

@@ -21,7 +21,10 @@ export default function InputPassword({ label, ...props }) {
         {...props}
         type={showPassword ? 'text' : 'password'}
       />
-      <ShowPasswordBtn onClick={() => setShowPassword(!showPassword)}>
+      <ShowPasswordBtn
+        type="button"
+        onClick={() => setShowPassword(!showPassword)}
+      >
         {showPassword ? (
           <PiEyeLight className="icon-eye" />
         ) : (

@@ -30,8 +30,18 @@ export default function MyTask({ task }) {
     setIsMoving(!isMoving);
   };
 
+  // const taskId = task._id;
+
+  const deleteOneTask = evt => {
+    const taskId = evt.currentTarget.name;
+    console.log(taskId);
+    dispatch(deleteTask(taskId));
+  };
+
+  // const taskId = task._id;
+
   return (
-    <WrapTask id={task.id}>
+    <WrapTask id={task._id}>
       <Wrapper>
         <TaskBackGr style={{ backgroundColor: task.color }}>
           {/* <Text>Successfully completed <BsHandThumbsUpFill /></Text> */}
@@ -47,7 +57,7 @@ export default function MyTask({ task }) {
                 dispatch(
                   changeTaskColor({
                     color: '#64b5f6',
-                    id: task.id,
+                    _id: task._id,
                   })
                 )
               }
@@ -57,7 +67,7 @@ export default function MyTask({ task }) {
             <BtnStatus
               color="#ff5252"
               onClick={() =>
-                dispatch(changeTaskColor({ color: '#ff5252', id: task.id }))
+                dispatch(changeTaskColor({ color: '#ff5252', _id: task._id }))
               }
             >
               <BsEmojiWink className="icon-color" />
@@ -65,7 +75,7 @@ export default function MyTask({ task }) {
             <BtnStatus
               color="#ffee58"
               onClick={() =>
-                dispatch(changeTaskColor({ color: '#ffee58', id: task.id }))
+                dispatch(changeTaskColor({ color: '#ffee58', _id: task._id }))
               }
             >
               <BsEmojiWink className="icon-color" />
@@ -73,12 +83,12 @@ export default function MyTask({ task }) {
             <BtnStatus
               color="#00e676"
               onClick={() =>
-                dispatch(changeTaskColor({ color: '#00e676', id: task.id }))
+                dispatch(changeTaskColor({ color: '#00e676', _id: task._id }))
               }
             >
               <BsEmojiWink className="icon-color" />
             </BtnStatus>
-            <BtnDelete onClick={() => dispatch(deleteTask(task.id))}>
+            <BtnDelete name={task._id} onClick={deleteOneTask}>
               <BsFillTrash3Fill className="icon-delete" />
             </BtnDelete>
           </SettingTask>
