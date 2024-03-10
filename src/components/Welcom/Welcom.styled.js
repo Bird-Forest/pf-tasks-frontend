@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import task from '../../img/icon_219488.png';
 export const WrapAuthNav = styled.div`
   display: flex;
   flex-direction: column;
@@ -15,5 +16,10 @@ export const WrapAuthNav = styled.div`
     &.active {
       color: #2196f3;
     }
+  }
+  .img {
+    width: 128px;
+    height: 128px;
+    background-image: url(${task});
   }
 `;

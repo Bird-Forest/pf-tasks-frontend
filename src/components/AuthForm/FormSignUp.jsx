@@ -43,11 +43,9 @@ export default function FormSignUp() {
               name="password"
               type="password"
             />
-            {/* <NavLink to="/login"> */}
             <button type="submit" className="button">
               {props.isSubmitting ? 'loading...' : 'Submit'}
             </button>
-            {/* </NavLink> */}
           </Form>
         )}
       </Formik>

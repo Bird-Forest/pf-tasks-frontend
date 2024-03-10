@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import { FaPenToSquare } from 'react-icons/fa6';
-// import { BtnForm, FormTask, InputForm } from './TaskForm.styled';
 import { useDispatch } from 'react-redux';
-// import { addTask } from '../../redux/tasks/tasksSlice';
 import { IoCloseSharp } from 'react-icons/io5';
 import {
   Backdrop,
@@ -42,7 +40,6 @@ export default function TaskForm({ onClose }) {
       event.target.reset();
       onClose();
     }
-    // return alert('Task cannot be empty. Enter some text!');
   };
   return (
     <Backdrop onClick={onClose}>

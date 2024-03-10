@@ -1,8 +1,8 @@
 import React from 'react';
 import { AvatarUser, NameUser, WrapUser } from './Navigation.styled';
-import { FcReddit } from 'react-icons/fc';
 import { useSelector } from 'react-redux';
 import { selectUser } from 'redux/selectors';
+import { FaUserSecret } from 'react-icons/fa';
 
 export default function UserLogo() {
   const user = useSelector(selectUser);
@@ -13,7 +13,7 @@ export default function UserLogo() {
     <WrapUser>
       <AvatarUser>
         {avatar === null ? (
-          <FcReddit className="icon-avatar" />
+          <FaUserSecret className="icon-avatar" />
         ) : (
           <img src={avatar} alt="avatar" className="img-avatar" />
         )}

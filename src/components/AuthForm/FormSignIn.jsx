@@ -31,11 +31,6 @@ export default function FormSignIn() {
           setSubmitting(true);
           dispatch(loginThunk(values));
           resetForm();
-          // setTimeout(() => {
-          //   alert(JSON.stringify(values, null, 2));
-          //   setSubmitting(true);
-          //   resetForm();
-          // }, 200);
         }}
       >
         {props => (

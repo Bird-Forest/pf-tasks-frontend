@@ -14,38 +14,24 @@ export default function CustomRoutes() {
   return (
     <>
       <Routes>
-        {/* <Route
-          path="/"
-          element={
-            <RestrictedRoute redirectTo="/tasks" component={<HomePage />} />
-          }
-        /> */}
         <Route path="/" element={<HomePage />} />
-        {/* <Route path="/register" element={<RegisterPage />} /> */}
         <Route
           path="/register"
           element={
             <PablicRoute redirectTo="/login" component={<RegisterPage />} />
           }
         />
-        {/* <Route path="/login" element={<LoginPage />} /> */}
         <Route
           path="/login"
           element={
             <RestrictedRoute redirectTo="/tasks" component={<LoginPage />} />
           }
         />
-
         <Route
           path="/tasks"
           element={<PrivateRoute redirectTo="/" component={<TasksPage />} />}
         />
       </Routes>
-      {/* <Route
-          path="/tasks"
-          element={<PrivateRoute component={<TasksPage />} />}
-        />
-      </Routes> */}
     </>
   );
 }
