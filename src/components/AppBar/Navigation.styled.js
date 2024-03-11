@@ -4,19 +4,22 @@ import styled from 'styled-components';
 export const HeaderWrap = styled.header`
   position: relative;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   min-width: 300px;
-  padding: 4px 0;
+  padding: 4px;
   margin: 0;
 
   @media screen and (min-width: 767px) {
-    padding: 4px 20px;
+    padding: 4px 16px;
     width: 760px;
   }
 `;
 // ************ Link Home Tasks *********
 export const StyledNavLink = styled(NavLink)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
   text-align: left;
   font-size: clamp(16px, 0.667rem + 1.67vw, 24px);
@@ -24,12 +27,11 @@ export const StyledNavLink = styled(NavLink)`
   font-weight: 700;
   color: #616161;
   transition: all 0.3s;
-  margin: 0;
+  margin: 0 auto 0 0;
   padding: 0;
   .icon-link {
     width: 30px;
     height: 30px;
-    margin: 4px 0 0 0;
   }
   &.active {
     color: #ffffff;
@@ -47,7 +49,7 @@ export const BtnPlus = styled.button`
   outline: none;
   cursor: pointer;
   padding: 0;
-  margin: 0;
+  margin: 0 auto 0 0;
   .icon-plus {
     width: 28px;
     height: 28px;
