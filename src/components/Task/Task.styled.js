@@ -238,9 +238,11 @@ export const WrapEmpty = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  /* background-color: red; */
+  width: 100%;
+  height: 100vh;
+  background-color: #e0e0e0;
   padding: 0;
   margin: 20px 0;
   .empty-text {

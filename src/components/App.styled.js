@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+// ********* Wrapper Main *************
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -19,6 +20,7 @@ export const Container = styled.div`
     width: 500px;
   } */
 `;
+// ****** Wrapper Header ***************
 export const WrapNavigate = styled.div`
   /* position: fixed;
   z-index: 1;
@@ -34,6 +36,7 @@ export const WrapNavigate = styled.div`
   padding: 0;
   margin: 0;
 `;
+// ****** Wrapper Render ************
 export const WrapOutlet = styled.div`
   display: flex;
   justify-content: center;

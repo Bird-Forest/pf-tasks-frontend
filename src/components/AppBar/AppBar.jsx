@@ -11,7 +11,9 @@ import BtnSetting from './BtnSetting';
 
 export default function AppBar() {
   const [newTask, setNewTask] = useState(false);
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn, token } = useAuth();
+
+  const isAuthorized = isLoggedIn === true && token !== null;
 
   const openModalNewTask = () => {
     setNewTask(true);
@@ -22,7 +24,7 @@ export default function AppBar() {
         <StyledNavLink to="/">
           <FaHome className="icon-link" />
         </StyledNavLink>
-        {isLoggedIn && (
+        {isAuthorized && (
           <>
             <StyledNavLink to="/tasks">Tasks</StyledNavLink>
             <BtnPlus onClick={openModalNewTask}>
@@ -36,7 +38,7 @@ export default function AppBar() {
           </>
         )}
         <UserLogo />
-        {isLoggedIn && <BtnSetting />}
+        {isAuthorized && <BtnSetting />}
       </HeaderWrap>
     </WrapNavigate>
   );

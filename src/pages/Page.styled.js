@@ -1,5 +1,12 @@
 import styled from 'styled-components';
 
+export const WrapHome = styled.div`
+  top: 100px;
+  display: flex;
+  width: 900px;
+  height: 100%;
+`;
+
 export const WrapTasksPage = styled.div`
   display: flex;
   flex-direction: column;
@@ -25,6 +32,7 @@ export const WrapTasksPage = styled.div`
     width: 480px;
   } */
 `;
+
 export const WrapSignPage = styled.div`
   display: flex;
   flex-direction: column;
@@ -62,9 +70,3 @@ export const TitleSignPage = styled.h3`
 //   padding: 0;
 //   margin: 0;
 // `;
-export const WrapHome = styled.div`
-  top: 100px;
-  display: flex;
-  width: 900px;
-  height: 100%;
-`;

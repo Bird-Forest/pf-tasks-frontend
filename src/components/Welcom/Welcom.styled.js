@@ -5,7 +5,7 @@ export const WrapAuthNav = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
   margin: 0;
   padding: 0;
   .navigate {

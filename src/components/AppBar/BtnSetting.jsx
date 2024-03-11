@@ -18,7 +18,7 @@ export default function BtnSetting() {
   };
 
   return (
-    <div>
+    <>
       <BtnSet onClick={() => setIsShow(!isShow)}>
         {isShow ? (
           <IoIosArrowUp className="icon-arrow" />
@@ -44,6 +44,6 @@ export default function BtnSetting() {
             document.body
           )}
       </WrapSetting>
-    </div>
+    </>
   );
 }

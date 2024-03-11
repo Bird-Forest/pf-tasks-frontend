@@ -6,21 +6,23 @@ export const HeaderWrap = styled.header`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-width: 320px;
-  padding: 4px 16px;
+  min-width: 300px;
+  padding: 4px 0;
   margin: 0;
 
   @media screen and (min-width: 767px) {
+    padding: 4px 20px;
     width: 760px;
   }
 `;
+// ************ Link Home Tasks *********
 export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   text-align: left;
   font-size: clamp(16px, 0.667rem + 1.67vw, 24px);
 
   font-weight: 700;
-  color: #424242;
+  color: #616161;
   transition: all 0.3s;
   margin: 0;
   padding: 0;
@@ -33,6 +35,7 @@ export const StyledNavLink = styled(NavLink)`
     color: #ffffff;
   }
 `;
+// ********** Add task ******
 export const BtnPlus = styled.button`
   display: flex;
   justify-content: center;
@@ -51,6 +54,7 @@ export const BtnPlus = styled.button`
     color: #ffffff;
   }
 `;
+// ********** UserLogo ************
 export const WrapUser = styled.div`
   display: flex;
   justify-content: center;
@@ -62,10 +66,6 @@ export const AvatarUser = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  // width: 34px;
-  // height: 34px;
-  // border-radius: 50%;
-  // background-color: #ffffff;
   padding: 0;
   margin: 0;
   .img-avatar {
@@ -73,12 +73,14 @@ export const AvatarUser = styled.div`
     height: 30px;
     border-radius: 50%;
     object-fit: cover;
+    background-color: white;
   }
   .icon-avatar {
-    width: 30px;
-    height: 30px;
+    fill: #616161;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
-    background-color: red;
+    background-color: white;
   }
 `;
 export const NameUser = styled.div`
@@ -96,6 +98,7 @@ export const NameUser = styled.div`
     color: #ffffff;
   }
 `;
+// ********* Btn open - close Setting and LogOut ********
 export const BtnSet = styled.button`
   width: 36px;
   height: 36px;
@@ -111,10 +114,12 @@ export const BtnSet = styled.button`
     fill: #ffffff;
   }
 `;
+// ********** Setting and LogOut ************
 export const WrapSetting = styled.div`
   position: absolute;
   top: 56px;
   right: 20px;
+  z-index: 1;
   display: block;
   width: 90px;
   height: 56px;
