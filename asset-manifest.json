@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/pf-tasks-frontend/static/css/main.3c0c9886.css",
-    "main.js": "/pf-tasks-frontend/static/js/main.5e264baf.js",
+    "main.js": "/pf-tasks-frontend/static/js/main.c0deb0c4.js",
     "static/js/831.b1fedad6.chunk.js": "/pf-tasks-frontend/static/js/831.b1fedad6.chunk.js",
     "static/js/64.323ca017.chunk.js": "/pf-tasks-frontend/static/js/64.323ca017.chunk.js",
     "static/js/986.469b3462.chunk.js": "/pf-tasks-frontend/static/js/986.469b3462.chunk.js",
-    "static/js/582.546d9d6f.chunk.js": "/pf-tasks-frontend/static/js/582.546d9d6f.chunk.js",
+    "static/js/582.a133c431.chunk.js": "/pf-tasks-frontend/static/js/582.a133c431.chunk.js",
     "static/js/371.206931eb.chunk.js": "/pf-tasks-frontend/static/js/371.206931eb.chunk.js",
     "static/js/333.53558f73.chunk.js": "/pf-tasks-frontend/static/js/333.53558f73.chunk.js",
     "index.html": "/pf-tasks-frontend/index.html",
     "main.3c0c9886.css.map": "/pf-tasks-frontend/static/css/main.3c0c9886.css.map",
-    "main.5e264baf.js.map": "/pf-tasks-frontend/static/js/main.5e264baf.js.map",
+    "main.c0deb0c4.js.map": "/pf-tasks-frontend/static/js/main.c0deb0c4.js.map",
     "831.b1fedad6.chunk.js.map": "/pf-tasks-frontend/static/js/831.b1fedad6.chunk.js.map",
     "64.323ca017.chunk.js.map": "/pf-tasks-frontend/static/js/64.323ca017.chunk.js.map",
     "986.469b3462.chunk.js.map": "/pf-tasks-frontend/static/js/986.469b3462.chunk.js.map",
-    "582.546d9d6f.chunk.js.map": "/pf-tasks-frontend/static/js/582.546d9d6f.chunk.js.map",
+    "582.a133c431.chunk.js.map": "/pf-tasks-frontend/static/js/582.a133c431.chunk.js.map",
     "371.206931eb.chunk.js.map": "/pf-tasks-frontend/static/js/371.206931eb.chunk.js.map",
     "333.53558f73.chunk.js.map": "/pf-tasks-frontend/static/js/333.53558f73.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3c0c9886.css",
-    "static/js/main.5e264baf.js"
+    "static/js/main.c0deb0c4.js"
   ]
 }
