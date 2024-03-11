@@ -55,24 +55,12 @@ export const deleteTask = createAsyncThunk(
 );
 
 export const changeTaskColor = createAsyncThunk(
-  'tasks/toggleCompleted',
-  async (task, thunkAPI) => {
+  'tasks/updateColor',
+  async (newTask, thunkAPI) => {
+    console.log(newTask);
     try {
-      const response = await axios.put(`/tasks/${task.id}`);
-      console.log(response.data);
-      return response.data;
-    } catch (e) {
-      return thunkAPI.rejectWithValue(e.message);
-    }
-  }
-);
-
-export const toggleCompleted = createAsyncThunk(
-  'tasks/toggleCompleted',
-  async (task, thunkAPI) => {
-    try {
-      const response = await axios.put(`/tasks/${task.id}`, {
-        completed: !task.completed,
+      const response = await axios.patch(`/tasks/${newTask.taskId}/color`, {
+        color: newTask.newColor,
       });
       console.log(response.data);
       return response.data;
@@ -81,4 +69,19 @@ export const toggleCompleted = createAsyncThunk(
     }
   }
 );
+
+// export const toggleCompleted = createAsyncThunk(
+//   'tasks/toggleCompleted',
+//   async (task, thunkAPI) => {
+//     try {
+//       const response = await axios.put(`/tasks/${task.id}`, {
+//         completed: !task.completed,
+//       });
+//       console.log(response.data);
+//       return response.data;
+//     } catch (e) {
+//       return thunkAPI.rejectWithValue(e.message);
+//     }
+//   }
+// );
 // *************************************************************************

@@ -18,10 +18,7 @@ export default function TaskList() {
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectErrorTasks);
 
-  // const newTasks = useSelector(selectVisibleTasks);
   const tasks = useSelector(selectTasks);
-
-  console.log(tasks);
 
   useEffect(() => {
     dispatch(fetchTasks());

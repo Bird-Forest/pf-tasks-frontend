@@ -11,10 +11,8 @@ import {
 } from './Task.styled';
 import { BsFillTrash3Fill } from 'react-icons/bs';
 import { useDispatch } from 'react-redux';
-// import { deleteTask, changeTaskColor } from '../../redux/tasks/tasksSlice';
 import { BsEmojiWink } from 'react-icons/bs';
 import { FaCogs } from 'react-icons/fa';
-// import { BsHandThumbsUpFill } from 'react-icons/bs';
 import { BsHandThumbsUp } from 'react-icons/bs';
 import { changeTaskColor, deleteTask } from 'redux/tasks/servise';
 // import { selectStatusFilter } from 'redux/selectors';
@@ -25,26 +23,32 @@ export default function MyTask({ task }) {
   const [isMoving, setIsMoving] = useState(false);
   // const filter = useSelector(selectStatusFilter);
   // const completed = filter.white
+  const style = { backgroundColor: '#64b5f6' };
+  console.log(style);
 
   const handleSettingClick = () => {
     setIsMoving(!isMoving);
   };
 
-  // const taskId = task._id;
-
-  const deleteOneTask = evt => {
+  const handleDeleteTask = evt => {
     const taskId = evt.currentTarget.name;
-    console.log(taskId);
     dispatch(deleteTask(taskId));
   };
 
-  // const taskId = task._id;
+  const handleChangeColor = evt => {
+    // const taskId = evt.currentTarget.name;
+    // const newColor = evt.currentTarget.value;
+    const newTask = {
+      taskId: evt.currentTarget.name,
+      newColor: evt.currentTarget.value,
+    };
+    dispatch(changeTaskColor(newTask));
+  };
 
   return (
     <WrapTask id={task._id}>
       <Wrapper>
         <TaskBackGr style={{ backgroundColor: task.color }}>
-          {/* <Text>Successfully completed <BsHandThumbsUpFill /></Text> */}
           <Text>{task.title}</Text>
           <SettingTask
             style={{
@@ -52,43 +56,59 @@ export default function MyTask({ task }) {
             }}
           >
             <BtnStatus
+              type="button"
+              name={task._id}
               color="#64b5f6"
-              onClick={() =>
-                dispatch(
-                  changeTaskColor({
-                    color: '#64b5f6',
-                    _id: task._id,
-                  })
-                )
-              }
+              value="#64b5f6"
+              // onClick={evt =>
+              //   dispatch(
+              //     changeTaskColor({
+              //       color: '#64b5f6',
+              //       taskId: evt.currentTarget.name,
+              //     })
+              //   )
+              // }
+              onClick={handleChangeColor}
             >
               <BsHandThumbsUp className="icon-color" />
             </BtnStatus>
             <BtnStatus
+              type="button"
+              name={task._id}
               color="#ff5252"
-              onClick={() =>
-                dispatch(changeTaskColor({ color: '#ff5252', _id: task._id }))
-              }
+              value="#ff5252"
+              // onClick={() =>
+              //   dispatch(changeTaskColor({ color: '#ff5252', _id: task._id }))
+              // }
+              onClick={handleChangeColor}
             >
               <BsEmojiWink className="icon-color" />
             </BtnStatus>
             <BtnStatus
+              type="button"
+              name={task._id}
               color="#ffee58"
-              onClick={() =>
-                dispatch(changeTaskColor({ color: '#ffee58', _id: task._id }))
-              }
+              value="#ffee58"
+              // onClick={() =>
+              //   dispatch(changeTaskColor({ color: '#ffee58', _id: task._id }))
+              // }
+              onClick={handleChangeColor}
             >
               <BsEmojiWink className="icon-color" />
             </BtnStatus>
             <BtnStatus
+              type="button"
+              name={task._id}
               color="#00e676"
-              onClick={() =>
-                dispatch(changeTaskColor({ color: '#00e676', _id: task._id }))
-              }
+              value="#00e676"
+              // onClick={() =>
+              //   dispatch(changeTaskColor({ color: '#00e676', _id: task._id }))
+              // }
+              onClick={handleChangeColor}
             >
               <BsEmojiWink className="icon-color" />
             </BtnStatus>
-            <BtnDelete name={task._id} onClick={deleteOneTask}>
+            <BtnDelete name={task._id} onClick={handleDeleteTask}>
               <BsFillTrash3Fill className="icon-delete" />
             </BtnDelete>
           </SettingTask>

@@ -100,7 +100,7 @@ export const TaskBackGr = styled.div`
   align-items: center;
   height: 32px;
   width: 100%;
-  background-color: ${props => props.color};
+  background-color: ${props => props.value};
   border-radius: 6px;
   border: 1px solid #bdbdbd;
   padding: 0;
@@ -190,7 +190,7 @@ export const BtnStatus = styled.button`
   height: 30px;
   border: 1px solid #616161;
   border-radius: 50%;
-  background-color: ${props => props.color};
+  background-color: ${props => props.value};
   cursor: pointer;
   .icon-color {
     width: 24px;

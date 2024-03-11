@@ -1,5 +1,5 @@
 export const statusFilters = Object.freeze({
-  all: 'all',
+  white: '#ffffff',
   blue: '#64b5f6',
   red: '#ff5252',
   yellow: '#ffee58',

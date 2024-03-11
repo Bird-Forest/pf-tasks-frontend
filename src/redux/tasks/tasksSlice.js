@@ -77,7 +77,14 @@ const tasksSlice = createSlice({
       .addCase(changeTaskColor.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.tasks.push(action.payload);
+        state.tasks = action.payload;
+        // state.tasks.push(action.payload);
+        // state.tasks = state.tasks.map(task => {
+        //   if (task.id === action.payload.id) {
+        //     task.color = action.payload.color;
+        //   }
+        //   return task;
+        // });
       })
       .addCase(changeTaskColor.rejected, handleRejected)
 
