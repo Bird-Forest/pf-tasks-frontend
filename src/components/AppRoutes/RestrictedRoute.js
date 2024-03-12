@@ -7,10 +7,12 @@ import { Navigate } from 'react-router-dom';
  */
 
 export const RestrictedRoute = ({ component: Component, redirectTo = '/' }) => {
-  const { isLoggedIn, token } = useAuth();
-  console.log(token);
-  const isAuthorized = isLoggedIn === true && token !== null;
-  console.log(isAuthorized);
+  // const { isLoggedIn, token } = useAuth();
+  const { isAuthentication, isAuthorization } = useAuth();
+  const isUser = isAuthentication && isAuthorization;
+  // console.log(token);
+  // const isAuthorized = isLoggedIn === true && token !== null;
+  // console.log(isAuthorized);
 
-  return isAuthorized ? <Navigate to={redirectTo} /> : Component;
+  return isUser ? <Navigate to={redirectTo} /> : Component;
 };

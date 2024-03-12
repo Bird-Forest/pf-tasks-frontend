@@ -6,7 +6,9 @@ import { FaUserSecret } from 'react-icons/fa';
 
 export default function UserLogo() {
   const user = useSelector(selectUser);
+  console.log(user);
   const avatar = user.avatarURL;
+  console.log(avatar);
   const name = user.name;
 
   return (

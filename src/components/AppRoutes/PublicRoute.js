@@ -3,7 +3,8 @@ import React from 'react';
 import { Navigate } from 'react-router-dom';
 
 export const PablicRoute = ({ component: Component, redirectTo = '/' }) => {
-  const { isLoggedIn } = useAuth();
+  // const { isLoggedIn } = useAuth();
+  const { isAuthentication } = useAuth();
 
-  return isLoggedIn ? <Navigate to={redirectTo} /> : Component;
+  return isAuthentication ? <Navigate to={redirectTo} /> : Component;
 };

@@ -74,7 +74,8 @@ export const AvatarPopUp = styled.div`
     background-color: red;
   }
   .visually-hidden {
-    position: absolute !important;
+    /* position: absolute !important; */
+    position: absolute;
     height: 1px;
     width: 1px;
     overflow: hidden;

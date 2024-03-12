@@ -23,8 +23,8 @@ export default function MyTask({ task }) {
   const [isMoving, setIsMoving] = useState(false);
   // const filter = useSelector(selectStatusFilter);
   // const completed = filter.white
-  const style = { backgroundColor: '#64b5f6' };
-  console.log(style);
+  // const style = { backgroundColor: '#64b5f6' };
+  // console.log(style);
 
   const handleSettingClick = () => {
     setIsMoving(!isMoving);

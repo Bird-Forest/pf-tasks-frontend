@@ -13,9 +13,13 @@ import { FaArrowUp } from 'react-icons/fa';
 import { FcReddit } from 'react-icons/fc';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUser } from '../../redux/selectors';
-import { updateAvatar } from '../../redux/user/operations';
+import { updateAvatar, updateUser } from '../../redux/user/operations';
+// import { useAuth } from 'hooks';
 
 export default function ModalSetting({ onClose }) {
+  // const { isAuthentication, isAuthorization } = useAuth();
+  // console.log(isAuthentication);
+  // console.log(isAuthorization);
   const user = useSelector(selectUser);
   const avatar = user.avatarURL;
   const dispatch = useDispatch();
@@ -36,17 +40,26 @@ export default function ModalSetting({ onClose }) {
   }, [onClose]);
 
   const uploadFile = evt => {
-    const picture = evt.target.files[0];
     const formData = new FormData();
-    formData.append('avatar', picture);
-    console.log(formData);
+    if (evt.target.files.length <= 0) {
+      return;
+    }
+    formData.append('avatar', evt.target.files[0]);
     dispatch(updateAvatar(formData));
+    // evt.preventDefault();
+    // const file = evt.target.files[0];
+    // const file = evt.currentTarget.files[0];
+    // console.log(file);
+    // const formData = new FormData();
+    // formData.append('avatar', file);
+    // console.log(formData);
+    // dispatch(updateAvatar(file));
   };
 
   const updateName = evt => {
     const newName = evt.target.value;
     console.log(newName);
-    dispatch(updateAvatar(newName));
+    dispatch(updateUser(newName));
   };
 
   return (
@@ -62,18 +75,18 @@ export default function ModalSetting({ onClose }) {
           ) : (
             <img src={avatar} alt="avatar" className="avatar-img" />
           )}
-          <input
-            type="file"
-            id="fileElem"
-            name="fileElem"
-            // value={file}
-            // multiple
-            accept="image/*"
-            // style={{ display: 'none' }}
-            className="visually-hidden"
-            onClick={uploadFile}
-          />
-          <label htmlFor="fileElem" className="lable-text">
+          <label htmlFor="file" className="lable-text">
+            <input
+              type="file"
+              id="file"
+              name="file"
+              // value={file}
+              // multiple
+              accept="image/*"
+              // style={{ display: 'none' }}
+              className="visually-hidden"
+              onClick={uploadFile}
+            />
             <FaArrowUp /> Upload your avatar
           </label>
 

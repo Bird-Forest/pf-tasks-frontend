@@ -1,44 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { addTask, changeTaskColor, deleteTask, fetchTasks } from './servise';
 
-// console.log(tasksData);
-// const taskSlice = createSlice({
-//   name: 'tasks',
-//   initialState: tasksData,
-//   reducers: {
-//     addTask: {
-//       reducer(state, action) {
-//         state.tasks.push(action.payload);
-//       },
-//       prepare(title) {
-//         return {
-//           payload: {
-//             title,
-//             id: nanoid(),
-//             color: 'white',
-//           },
-//         };
-//       },
-//     },
-
-//     deleteTask: (state, action) => {
-//       state.tasks = state.tasks.filter(task => task.id !== action.payload);
-//     },
-
-//     changeTaskColor: (state, action) => {
-//       state.tasks = state.tasks.map(task => {
-//         if (task.id === action.payload.id) {
-//           task.color = action.payload.color;
-//         }
-//         return task;
-//       });
-//     },
-//   },
-// });
-
-// export const { addTask, deleteTask, changeTaskColor } = taskSlice.actions;
-// export const tasksReducer = taskSlice.reducer;
-
 const handlePending = state => {
   state.isLoading = true;
 };
@@ -77,14 +39,12 @@ const tasksSlice = createSlice({
       .addCase(changeTaskColor.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.tasks = action.payload;
-        // state.tasks.push(action.payload);
-        // state.tasks = state.tasks.map(task => {
-        //   if (task.id === action.payload.id) {
-        //     task.color = action.payload.color;
-        //   }
-        //   return task;
-        // });
+        state.tasks = state.tasks.map(task => {
+          if (task._id === action.payload._id) {
+            task.color = action.payload.color;
+          }
+          return task;
+        });
       })
       .addCase(changeTaskColor.rejected, handleRejected)
 

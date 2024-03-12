@@ -49,6 +49,46 @@ export const loginThunk = createAsyncThunk(
     }
   }
 );
+
+/*
+ * PUT @ /users/updateAvatar  * headers: Authorization: Bearer token
+ */
+export const updateAvatar = createAsyncThunk(
+  'auth/updateAvatar',
+  async (file, thunkAPI) => {
+    console.log(file);
+    try {
+      const state = thunkAPI.getState();
+      const token = state.auth.token;
+      setAuthHeader(token);
+      const res = await axios.patch('/users/avatar', file);
+      // setAuthHeader(res.data.token);
+      console.log(res.data);
+      return res.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+/*
+ * PUT @ /users/updateName  * headers: Authorization: Bearer token
+ */
+export const updateUser = createAsyncThunk(
+  'auth/updateName',
+  async (newName, thunkAPI) => {
+    try {
+      // const state = thunkAPI.getState();
+      // const token = state.auth.token;
+      // setAuthHeader(token);
+      const res = await axios.patch('/users/update/', newName);
+      setAuthHeader(res.data.token);
+      console.log(res.data);
+      return res.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
 /*
  * POST @ /users/logout  * headers: Authorization: Bearer token
  */
@@ -78,43 +118,6 @@ export const refreshThunk = createAsyncThunk(
     try {
       setAuthHeader(token);
       const res = await axios.get('/users/current');
-      console.log(res.data);
-      return res.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);
-/*
- * PUT @ /users/updateAvatar  * headers: Authorization: Bearer token
- */
-export const updateAvatar = createAsyncThunk(
-  'auth/updateAvatar',
-  async (formData, thunkAPI) => {
-    try {
-      const state = thunkAPI.getState();
-      const token = state.auth.token;
-      setAuthHeader(token);
-      const res = await axios.patch('/users/avatar', formData);
-      console.log(res.data);
-      return res.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);
-/*
- * PUT @ /users/updateName  * headers: Authorization: Bearer token
- */
-export const updateUser = createAsyncThunk(
-  'auth/updateName',
-  async (newName, thunkAPI) => {
-    try {
-      const state = thunkAPI.getState();
-      const token = state.auth.token;
-      setAuthHeader(token);
-      const res = await axios.patch('/users/update/', newName);
-      // thunkAPI.dispatch(refreshUser());
       console.log(res.data);
       return res.data;
     } catch (error) {
