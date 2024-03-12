@@ -23,7 +23,6 @@ export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   text-align: left;
   font-size: clamp(16px, 0.667rem + 1.67vw, 24px);
-
   font-weight: 700;
   color: #616161;
   transition: all 0.3s;
