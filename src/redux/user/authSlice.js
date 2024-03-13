@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-// import { FcReddit } from 'react-icons/fc';
+
 import {
   loginThunk,
   logoutThunk,

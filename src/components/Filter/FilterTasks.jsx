@@ -1,57 +1,78 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { selectStatusFilter } from 'redux/selectors';
-// import { setStatusFilter } from 'redux/filter/filtersSlice';
-import { statusFilters } from 'redux/filter/constans';
-
 import { CellStatus, TitleTab } from './Filter.styled';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { setColorFilter } from 'redux/filter/filtersSlice';
 
 export default function FilterTasks() {
-  // const dispatch = useDispatch();
-  // const tasks = useSelector(selectTasks);
-  const count = 0;
-  const filter = useSelector(selectStatusFilter);
-  // const handleFilterChange = filter => dispatch(setStatusFilter(filter));
+  const dispatch = useDispatch();
+
+  const handleGetColor = evt => {
+    const newColor = evt.target.name;
+    console.log(newColor);
+    if (newColor !== 'all') {
+      dispatch(setColorFilter(newColor));
+    }
+  };
 
   return (
     <TitleTab>
       <CellStatus>
         <div className="wrap">
-          <button
-            className="btn-prior white"
-            selected={filter === statusFilters.all}
-            // onClick={() => handleFilterChange(statusFilters.all)}
-          >
-            {0}
-          </button>
-          <button
-            className="btn-prior blue"
-            selected={filter === statusFilters.blue}
-            // onClick={() => handleFilterChange(statusFilters.blue)}
-          >
-            {count.blue}
-          </button>
-          <button
-            className="btn-prior red"
-            selected={filter === statusFilters.red}
-            // onClick={() => handleFilterChange(statusFilters.red)}
-          >
-            {count.red}
-          </button>
-          <button
-            className="btn-prior yellow"
-            selected={filter === statusFilters.yellow}
-            // onClick={() => handleFilterChange(statusFilters.yellow)}
-          >
-            {count.yellow}
-          </button>
-          <button
-            className="btn-prior green"
-            selected={filter === statusFilters.green}
-            // onClick={() => handleFilterChange(statusFilters.green)}
-          >
-            {count.green}
-          </button>
+          <Link to="">
+            <button
+              name="all"
+              className="btn-prior white"
+              onClick={handleGetColor}
+            >
+              all
+            </button>
+          </Link>
+          <Link to="color">
+            <button
+              name="#ffffff"
+              className="btn-prior white"
+              onClick={handleGetColor}
+            >
+              {0}
+            </button>
+          </Link>
+          <Link to="color">
+            <button
+              name="#64b5f6"
+              className="btn-prior blue"
+              onClick={handleGetColor}
+            >
+              {0}
+            </button>
+          </Link>
+          <Link to="color">
+            <button
+              name="#ff5252"
+              className="btn-prior red"
+              onClick={handleGetColor}
+            >
+              {0}
+            </button>
+          </Link>
+          <Link to="color">
+            <button
+              name="#ffee58"
+              className="btn-prior yellow"
+              onClick={handleGetColor}
+            >
+              {0}
+            </button>
+          </Link>
+          <Link to="color">
+            <button
+              name="#00e676"
+              className="btn-prior green"
+              onClick={handleGetColor}
+            >
+              {0}
+            </button>
+          </Link>
         </div>
       </CellStatus>
     </TitleTab>

@@ -30,6 +30,7 @@ export default function FormSignUp() {
         validationSchema={validationSchema}
         onSubmit={(values, { setSubmitting, resetForm }) => {
           setSubmitting(true);
+          console.log(values);
           dispatch(registerThunk(values));
           resetForm();
         }}

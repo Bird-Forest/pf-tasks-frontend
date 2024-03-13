@@ -18,21 +18,13 @@ import storage from 'redux-persist/lib/storage';
 const authPersistConfig = {
   key: 'auth',
   storage,
-  whitelist: ['token', 'user', 'isLoggedIn'],
-  //   blacklist: ['filter'],
+  whitelist: ['token', 'user'],
 };
-
-// const tasksPersistConfig = {
-//   key: 'tasks',
-//   storage,
-//   whitelist: ['tasks'],
-//   //   blacklist: ['filter'],
-// };
 
 const rootReducer = combineReducers({
   auth: persistReducer(authPersistConfig, authReducer),
   tasks: tasksReducer,
-  filter: filtersReducer,
+  color: filtersReducer,
 });
 
 export const store = configureStore({

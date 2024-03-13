@@ -15,16 +15,10 @@ import { BsEmojiWink } from 'react-icons/bs';
 import { FaCogs } from 'react-icons/fa';
 import { BsHandThumbsUp } from 'react-icons/bs';
 import { changeTaskColor, deleteTask } from 'redux/tasks/servise';
-// import { selectStatusFilter } from 'redux/selectors';
-// <BsHandThumbsUpFill />
 
 export default function MyTask({ task }) {
   const dispatch = useDispatch();
   const [isMoving, setIsMoving] = useState(false);
-  // const filter = useSelector(selectStatusFilter);
-  // const completed = filter.white
-  // const style = { backgroundColor: '#64b5f6' };
-  // console.log(style);
 
   const handleSettingClick = () => {
     setIsMoving(!isMoving);
@@ -36,8 +30,6 @@ export default function MyTask({ task }) {
   };
 
   const handleChangeColor = evt => {
-    // const taskId = evt.currentTarget.name;
-    // const newColor = evt.currentTarget.value;
     const newTask = {
       taskId: evt.currentTarget.name,
       newColor: evt.currentTarget.value,
@@ -58,16 +50,8 @@ export default function MyTask({ task }) {
             <BtnStatus
               type="button"
               name={task._id}
-              color="#64b5f6"
+              // color="#64b5f6"
               value="#64b5f6"
-              // onClick={evt =>
-              //   dispatch(
-              //     changeTaskColor({
-              //       color: '#64b5f6',
-              //       taskId: evt.currentTarget.name,
-              //     })
-              //   )
-              // }
               onClick={handleChangeColor}
             >
               <BsHandThumbsUp className="icon-color" />
@@ -75,11 +59,8 @@ export default function MyTask({ task }) {
             <BtnStatus
               type="button"
               name={task._id}
-              color="#ff5252"
+              // color="#ff5252"
               value="#ff5252"
-              // onClick={() =>
-              //   dispatch(changeTaskColor({ color: '#ff5252', _id: task._id }))
-              // }
               onClick={handleChangeColor}
             >
               <BsEmojiWink className="icon-color" />
@@ -87,11 +68,8 @@ export default function MyTask({ task }) {
             <BtnStatus
               type="button"
               name={task._id}
-              color="#ffee58"
+              // color="#ffee58"
               value="#ffee58"
-              // onClick={() =>
-              //   dispatch(changeTaskColor({ color: '#ffee58', _id: task._id }))
-              // }
               onClick={handleChangeColor}
             >
               <BsEmojiWink className="icon-color" />
@@ -99,11 +77,8 @@ export default function MyTask({ task }) {
             <BtnStatus
               type="button"
               name={task._id}
-              color="#00e676"
+              // color="#00e676"
               value="#00e676"
-              // onClick={() =>
-              //   dispatch(changeTaskColor({ color: '#00e676', _id: task._id }))
-              // }
               onClick={handleChangeColor}
             >
               <BsEmojiWink className="icon-color" />

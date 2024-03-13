@@ -58,4 +58,5 @@ const tasksSlice = createSlice({
       })
       .addCase(deleteTask.rejected, handleRejected),
 });
+
 export const tasksReducer = tasksSlice.reducer;

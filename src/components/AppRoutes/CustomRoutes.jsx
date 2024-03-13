@@ -8,6 +8,9 @@ const HomePage = lazy(() => import('../../pages/HomePage'));
 const RegisterPage = lazy(() => import('../../pages/RegisterPage'));
 const LoginPage = lazy(() => import('../../pages/LoginPage'));
 const TasksPage = lazy(() => import('../../pages/TasksPage'));
+const NotFound = lazy(() => import('../../pages/NotFoundPage'));
+const Tasks = lazy(() => import('../Task/TaskList'));
+const TasksColor = lazy(() => import('../Task/TaskListColor'));
 
 export default function CustomRoutes() {
   return (
@@ -29,7 +32,11 @@ export default function CustomRoutes() {
         <Route
           path="/tasks"
           element={<PrivateRoute redirectTo="/" component={<TasksPage />} />}
-        />
+        >
+          <Route path="" element={<Tasks />} end />
+          <Route path="color" element={<TasksColor />} />
+        </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );

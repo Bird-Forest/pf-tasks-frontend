@@ -1,20 +1,22 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { statusFilters } from './constans';
-
-const filterInit = {
-  status: statusFilters,
-};
+// import { colorFilters } from './constans';
 
 const filtersSlice = createSlice({
-  name: 'filter',
-  initialState: filterInit,
+  name: 'color',
+  initialState: {
+    filter: null,
+    priorities: [],
+  },
   reducers: {
-    setStatusFilter(state, action) {
-      state.status = action.payload;
+    setColorFilter(state, action) {
+      state.filter = action.payload;
+    },
+    getPriorityTasks(state, actions) {
+      state.priorities = actions.payload;
     },
   },
 });
 
 // Експортуємо генератори екшенів та редюсер
-export const { setStatusFilter } = filtersSlice.actions;
+export const { setColorFilter, getPriorityTasks } = filtersSlice.actions;
 export const filtersReducer = filtersSlice.reducer;

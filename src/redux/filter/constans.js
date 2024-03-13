@@ -1,4 +1,4 @@
-export const statusFilters = Object.freeze({
+export const colorFilters = Object.freeze({
   white: '#ffffff',
   blue: '#64b5f6',
   red: '#ff5252',
