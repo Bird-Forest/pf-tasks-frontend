@@ -13,8 +13,6 @@ export default function AppBar() {
   const [newTask, setNewTask] = useState(false);
   const { isAuthorization } = useAuth();
 
-  // const isAuthorized = isLoggedIn === true && token !== null;
-
   const openModalNewTask = () => {
     setNewTask(true);
   };

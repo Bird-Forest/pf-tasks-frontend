@@ -10,49 +10,6 @@ export const TitleTab = styled.div`
   padding: 0;
   margin: 0;
 `;
-// export const CellDate = styled.div`
-//   display: flex;
-//   flex-basis: 54px;
-//   height: 36px;
-//   justify-content: center;
-//   align-items: center;
-//   background-color: #9e9e9e;
-//   border-radius: 8px;
-//   border: 3px solid RGBA(117, 117, 117, 0.6);
-//   margin: 0;
-//   padding: 0;
-//   .date {
-//     width: 50px;
-//     height: 32px;
-//     border-radius: 4px;
-//     background-color: #f5f5f5;
-//     outline: none;
-//     border: none;
-//     padding: 0;
-//     margin: 0;
-//   }
-// `;
-// export const CellStatus = styled.div`
-//   display: flex;
-//   flex-basis: 36px;
-//   justify-content: center;
-//   align-items: center;
-//   height: 36px;
-//   background-color: #9e9e9e;
-//   border-radius: 8px;
-//   border: 3px solid RGBA(117, 117, 117, 0.6);
-//   margin: 0;
-//   .status {
-//     width: 32px;
-//     height: 32px;
-//     border-radius: 4px;
-//     background-color: #f5f5f5;
-//     outline: none;
-//     border: none;
-//     padding: 0;
-//     margin: 0;
-//   }
-// `;
 export const CellStatus = styled.div`
   display: flex;
   flex-grow: 1;
@@ -87,6 +44,10 @@ export const CellStatus = styled.div`
     cursor: pointer;
     padding: 0;
     margin: 0;
+  }
+  .grey {
+    background-color: #e0e0e0;
+    border: 1px solid #e0e0e0;
   }
   .white {
     background-color: #ffffff;

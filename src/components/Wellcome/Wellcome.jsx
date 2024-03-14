@@ -1,10 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { WrapWelcom } from './Welcom.styled';
+import { WrapWelcom } from './Wellcome.styled';
 import { useAuth } from 'hooks';
 import { HiPlus } from 'react-icons/hi';
 
-export const Welcom = () => {
+export const Wellcome = () => {
   const { isAuthentication } = useAuth();
   return (
     <WrapWelcom>

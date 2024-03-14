@@ -19,32 +19,17 @@ export const fetchTasks = createAsyncThunk(
     try {
       const res = await axios.get('/tasks');
       // При успішному запиті повертаємо проміс із даними
-      console.log(res.data);
+      // console.log(res.data);
       return res.data; // ЦЕ БУДЕ ЗАПИСАНО В ЕКШИН ПЕЙЛОАД
     } catch (e) {
       // При помилці запиту повертаємо проміс
       // який буде відхилений з текстом помилки
+      console.log(e.message);
       return thunkAPI.rejectWithValue(e.message);
     }
   }
 );
-export const fetchColorTasks = createAsyncThunk(
-  'tasks/fetchColor',
-  async (newColor, thunkAPI) => {
-    console.log(newColor);
-    const state = thunkAPI.getState();
-    const token = state.auth.token;
-    setAuthHeader(token);
-    try {
-      const res = await axios.get(`/tasks/${newColor}`);
 
-      console.log(res.data);
-      return res.data; // ЦЕ БУДЕ ЗАПИСАНО В ЕКШИН ПЕЙЛОАД
-    } catch (e) {
-      return thunkAPI.rejectWithValue(e.message);
-    }
-  }
-);
 export const addTask = createAsyncThunk(
   'tasks/addTask',
   async (newTask, thunkAPI) => {
@@ -53,10 +38,10 @@ export const addTask = createAsyncThunk(
     setAuthHeader(token);
     try {
       const res = await axios.post('/tasks', newTask);
-
-      console.log(res.data);
+      // console.log(res.data);
       return res.data;
     } catch (e) {
+      console.log(e.message);
       return thunkAPI.rejectWithValue(e.message);
     }
   }
@@ -64,15 +49,15 @@ export const addTask = createAsyncThunk(
 export const deleteTask = createAsyncThunk(
   'tasks/deleteTask',
   async (taskId, thunkAPI) => {
-    console.log(taskId);
     const state = thunkAPI.getState();
     const token = state.auth.token;
     setAuthHeader(token);
     try {
       const res = await axios.delete(`/tasks/${taskId}`);
-      console.log(res.data);
+      // console.log(res.data);
       return res.data;
     } catch (e) {
+      console.log(e.message);
       return thunkAPI.rejectWithValue(e.message);
     }
   }
@@ -81,17 +66,34 @@ export const deleteTask = createAsyncThunk(
 export const changeTaskColor = createAsyncThunk(
   'tasks/updateColor',
   async (newTask, thunkAPI) => {
-    console.log(newTask);
     try {
       const res = await axios.patch(`/tasks/${newTask.taskId}/color`, {
         color: newTask.newColor,
       });
-      console.log(res.data);
+      // console.log(res.data);
       return res.data;
     } catch (e) {
+      console.log(e.message);
       return thunkAPI.rejectWithValue(e.message);
     }
   }
 );
 
 // *************************************************************************
+// export const fetchColorTasks = createAsyncThunk(
+//   'tasks/fetchColor',
+//   async (newColor, thunkAPI) => {
+//     console.log(newColor);
+//     const state = thunkAPI.getState();
+//     const token = state.auth.token;
+//     setAuthHeader(token);
+//     try {
+//       const res = await axios.get(`/tasks/${newColor}`);
+
+//       console.log(res.data);
+//       return res.data; // ЦЕ БУДЕ ЗАПИСАНО В ЕКШИН ПЕЙЛОАД
+//     } catch (e) {
+//       return thunkAPI.rejectWithValue(e.message);
+//     }
+//   }
+// );

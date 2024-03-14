@@ -4,9 +4,6 @@ import { Container } from './App.styled';
 import Loading from './Loader/Loader';
 import AppBar from './AppBar/AppBar';
 import CustomRoutes from './AppRoutes/CustomRoutes';
-// import { useDispatch } from 'react-redux';
-// import { useAuth } from 'hooks';
-// import { refreshThunk } from 'redux/user/operations';
 
 export const App = () => {
   // const dispatch = useDispatch();

@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Helmet } from 'react-helmet';
 import { TitleSignPage, WrapSignPage } from './Page.styled';
 import FormSignUp from '../components/AuthForm/FormSignUp';
 import { WrapOutlet } from '../components/App.styled';

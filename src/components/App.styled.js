@@ -13,20 +13,9 @@ export const Container = styled.div`
   /* @media screen and (min-width: 767px) {
     width: 760px;
   } */
-  /* @media screen and (min-width: 440px) {
-    min-width: 440px;
-  }
-  @media screen and (min-width: 500px) {
-    width: 500px;
-  } */
 `;
 // ****** Wrapper Header ***************
 export const WrapNavigate = styled.div`
-  /* position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  right: 0; */
   display: flex;
   justify-content: center;
   align-items: center;

@@ -5,4 +5,3 @@ export const filters = Object.freeze({
   yellow: '#ffee58',
   green: '#00e676',
 });
-// console.log(statusFilters);

@@ -6,14 +6,6 @@ import { setColorFilter } from 'redux/filter/filtersSlice';
 import { selectTasks } from 'redux/selectors';
 import { filters } from '../../redux/filter/constans';
 
-// export const filters = Object.freeze({
-//   white: '#ffffff',
-//   blue: '#64b5f6',
-//   red: '#ff5252',
-//   yellow: '#ffee58',
-//   green: '#00e676',
-// });
-
 export default function FilterTasks() {
   const dispatch = useDispatch();
   const tasks = useSelector(selectTasks);
@@ -29,6 +21,7 @@ export default function FilterTasks() {
   const red = getCount(tasks, filters.red);
   const yellow = getCount(tasks, filters.yellow);
   const green = getCount(tasks, filters.green);
+
   const handleGetColor = evt => {
     const newColor = evt.target.name;
     if (newColor !== 'all') {
@@ -43,7 +36,7 @@ export default function FilterTasks() {
           <Link to="" style={{ textDecoration: 'none' }}>
             <button
               name="all"
-              className="btn-prior white"
+              className="btn-prior grey"
               onClick={handleGetColor}
             >
               {all}

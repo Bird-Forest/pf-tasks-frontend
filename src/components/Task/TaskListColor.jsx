@@ -18,7 +18,6 @@ export default function TaskListColor() {
   const error = useSelector(selectErrorTasks);
   const tasks = useSelector(selectTasks);
   const filter = useSelector(selectFilter);
-  console.log(filter);
   const priorities = tasks.filter(task => task.color === filter);
   const showArr = Array.isArray(priorities) && priorities.length !== 0;
   return (
