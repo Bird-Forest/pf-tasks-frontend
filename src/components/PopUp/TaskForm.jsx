@@ -32,7 +32,7 @@ export default function TaskForm({ onClose }) {
 
   const handleSubmit = event => {
     event.preventDefault();
-    const text = event.target.elements.title.value;
+    const text = event.target.elements.title.value.trim();
     const newTask = { title: text };
     console.log(newTask);
     if (text !== '') {

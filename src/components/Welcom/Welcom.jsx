@@ -5,7 +5,7 @@ import { useAuth } from 'hooks';
 import { HiPlus } from 'react-icons/hi';
 
 export const Welcom = () => {
-  const { isLoggedIn } = useAuth();
+  const { isAuthentication } = useAuth();
   return (
     <WrapWelcom>
       <h2 className="title">My tasks application</h2>
@@ -26,7 +26,7 @@ export const Welcom = () => {
       </div>
       <p className="point">Filter by priority</p>
       <p className="point">Delete task</p>
-      {isLoggedIn ? (
+      {isAuthentication ? (
         <button className="button">
           <NavLink to="/login" className="navigate">
             Sign In

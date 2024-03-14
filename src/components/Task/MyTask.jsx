@@ -15,6 +15,7 @@ import { BsEmojiWink } from 'react-icons/bs';
 import { FaCogs } from 'react-icons/fa';
 import { BsHandThumbsUp } from 'react-icons/bs';
 import { changeTaskColor, deleteTask } from 'redux/tasks/servise';
+import { filters } from '../../redux/filter/constans';
 
 export default function MyTask({ task }) {
   const dispatch = useDispatch();
@@ -51,7 +52,8 @@ export default function MyTask({ task }) {
               type="button"
               name={task._id}
               // color="#64b5f6"
-              value="#64b5f6"
+              // value="#64b5f6"
+              value={filters.blue}
               onClick={handleChangeColor}
             >
               <BsHandThumbsUp className="icon-color" />
@@ -60,7 +62,8 @@ export default function MyTask({ task }) {
               type="button"
               name={task._id}
               // color="#ff5252"
-              value="#ff5252"
+              // value="#ff5252"
+              value={filters.red}
               onClick={handleChangeColor}
             >
               <BsEmojiWink className="icon-color" />
@@ -69,7 +72,8 @@ export default function MyTask({ task }) {
               type="button"
               name={task._id}
               // color="#ffee58"
-              value="#ffee58"
+              // value="#ffee58"
+              value={filters.yellow}
               onClick={handleChangeColor}
             >
               <BsEmojiWink className="icon-color" />
@@ -78,7 +82,8 @@ export default function MyTask({ task }) {
               type="button"
               name={task._id}
               // color="#00e676"
-              value="#00e676"
+              // value="#00e676"
+              value={filters.green}
               onClick={handleChangeColor}
             >
               <BsEmojiWink className="icon-color" />
