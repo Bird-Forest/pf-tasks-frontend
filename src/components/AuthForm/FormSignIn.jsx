@@ -7,6 +7,7 @@ import { MyStyled } from './Form.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginThunk } from 'redux/user/operations';
 import { selectErrorUser } from 'redux/selectors';
+import ErrorAuth from './ErrorAuth';
 
 const validationSchema = Yup.object({
   email: Yup.string().email('Invalid email').required('This field is required'),
@@ -19,8 +20,8 @@ const initialValues = {
 
 export default function FormSignIn() {
   const dispatch = useDispatch();
-  const message = useSelector(selectErrorUser);
-  console.log(message);
+  const errorAuth = useSelector(selectErrorUser);
+  console.log(errorAuth);
   return (
     <MyStyled>
       <Formik
@@ -47,6 +48,7 @@ export default function FormSignIn() {
           </Form>
         )}
       </Formik>
+      {errorAuth !== null && <ErrorAuth error={errorAuth} />}
     </MyStyled>
   );
 }

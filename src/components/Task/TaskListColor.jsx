@@ -7,7 +7,7 @@ import {
   selectIsLoading,
   selectTasks,
 } from 'redux/selectors';
-import TaskListError from './TaskListError';
+import TaskListError from '../AuthForm/ErrorAuth';
 import { WrapList } from './Task.styled';
 import MyTask from './MyTask';
 import TaskListEmpty from './TaskListEmpty';

@@ -19,11 +19,12 @@ const initialState = {
 
 const handlePending = state => {
   state.isLoading = true;
+  state.error = null;
 };
 
 const handleRejected = (state, action) => {
   state.isLoading = false;
-  state.error = action.payload.error;
+  state.error = action.payload;
 };
 
 const authSlice = createSlice({
@@ -61,17 +62,18 @@ const authSlice = createSlice({
       .addCase(logoutThunk.rejected, handleRejected)
 
       // ---------- REFRESH USER ----------------
-      .addCase(refreshThunk.pending, state => {
-        state.isRefreshing = true;
-      })
+      .addCase(refreshThunk.pending, handlePending)
       .addCase(refreshThunk.fulfilled, (state, action) => {
         state.token = action.payload.token;
         state.user = action.payload.user;
         state.isLoggedIn = true;
-        state.isRefreshing = false;
+        // state.isRefreshing = false;
       })
-      .addCase(refreshThunk.rejected, state => {
-        state.isRefreshing = false;
+      .addCase(refreshThunk.rejected, (state, action) => {
+        // state.isRefreshing = false;
+        state.token = null;
+        state.isLoading = false;
+        state.error = action.payload.error;
       })
 
       // ---------- USER AVATAR ----------------

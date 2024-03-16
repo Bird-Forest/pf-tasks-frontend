@@ -11,13 +11,13 @@ import MyTask from './MyTask';
 import TaskListEmpty from './TaskListEmpty';
 import { fetchTasks } from 'redux/tasks/servise';
 import Loading from 'components/Loader/Loader';
-import TaskListError from './TaskListError';
 
 export default function TaskList() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectErrorTasks);
   const tasks = useSelector(selectTasks);
+  console.log(error);
 
   useEffect(() => {
     dispatch(fetchTasks());
@@ -27,7 +27,7 @@ export default function TaskList() {
   return (
     <>
       {isLoading && <Loading />}
-      {error && <TaskListError />}
+      {error && <h4>ERROR</h4>}
       <WrapList>
         {showArr ? (
           tasks.map(task => <MyTask task={task} key={nanoid()} />)

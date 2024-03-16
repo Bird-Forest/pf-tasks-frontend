@@ -21,7 +21,7 @@ export const registerThunk = createAsyncThunk(
     try {
       const res = await axios.post('/users/register', values);
       // After successful registration, add the token to the HTTP header
-      setAuthHeader(res.data.token);
+      // setAuthHeader(res.data.token);
       // Одразу логінізація для отримання токену
       // loginThunk(values)(thunkAPI.dispatch, thunkAPI.getState);
       // setAuthHeader(res.data.token);
@@ -41,7 +41,7 @@ export const loginThunk = createAsyncThunk(
   async (values, thunkAPI) => {
     try {
       const res = await axios.post('/users/login', values);
-      setAuthHeader(res.data.token);
+      // setAuthHeader(res.data.token);
       console.log(res.data);
       return res.data; // ЦЕ БУДЕ ЗАПИСАНО В ЕКШИН ПЕЙЛОАД
     } catch (error) {
@@ -55,16 +55,16 @@ export const loginThunk = createAsyncThunk(
  * PUT @ /users/updateAvatar  * headers: Authorization: Bearer token
  */
 export const updateAvatar = createAsyncThunk(
-  'auth/updateAvatar',
-  async (file, thunkAPI) => {
-    console.log(file);
+  'auth/avatar',
+  async (formData, thunkAPI) => {
+    console.log(formData);
     try {
       const state = thunkAPI.getState();
       const token = state.auth.token;
       setAuthHeader(token);
-      const res = await axios.patch('/users/avatar', file);
-      // setAuthHeader(res.data.token);
-      console.log(res.data);
+      const res = await axios.post('/users/avatar', formData);
+      setAuthHeader(res.data.token);
+      console.log(res.data.filename);
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -97,7 +97,11 @@ export const logoutThunk = createAsyncThunk(
   'auth/logout',
   async (_, thunkAPI) => {
     try {
+      const state = thunkAPI.getState();
+      const token = state.auth.token;
+      setAuthHeader(token);
       await axios.post('/users/logout');
+
       // After a successful logout, remove the token from the HTTP header
       clearAuthHeader();
     } catch (error) {
@@ -117,8 +121,8 @@ export const refreshThunk = createAsyncThunk(
       return thunkAPI.rejectWithValue('Unable to fetch user');
     }
     try {
-      setAuthHeader(token);
       const res = await axios.get('/users/current');
+      setAuthHeader(res.data.token);
       console.log(res.data);
       return res.data;
     } catch (error) {

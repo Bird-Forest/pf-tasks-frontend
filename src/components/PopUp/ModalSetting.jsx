@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import {
-  AvatarPopUp,
   Backdrop,
   BtnClose,
   BtnPopUpSave,
@@ -9,20 +8,14 @@ import {
   WrapPopUp,
 } from './Modal.styled';
 import { IoCloseSharp } from 'react-icons/io5';
-import { FaArrowUp } from 'react-icons/fa';
-import { FcReddit } from 'react-icons/fc';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUser } from '../../redux/selectors';
-import { updateAvatar, updateUser } from '../../redux/user/operations';
-// import { useAuth } from 'hooks';
+import { updateUser } from '../../redux/user/operations';
+import UploadFile from './UploadFile';
 
 export default function ModalSetting({ onClose }) {
-  // const { isAuthentication, isAuthorization } = useAuth();
-  // console.log(isAuthentication);
-  // console.log(isAuthorization);
-  const user = useSelector(selectUser);
-  const avatar = user.avatarURL;
   const dispatch = useDispatch();
+  const user = useSelector(selectUser);
 
   useEffect(() => {
     const handleEscape = event => {
@@ -39,26 +32,8 @@ export default function ModalSetting({ onClose }) {
     };
   }, [onClose]);
 
-  const uploadFile = evt => {
-    const formData = new FormData();
-    if (evt.target.files.length <= 0) {
-      return;
-    }
-    formData.append('avatar', evt.target.files[0]);
-    dispatch(updateAvatar(formData));
-    // evt.preventDefault();
-    // const file = evt.target.files[0];
-    // const file = evt.currentTarget.files[0];
-    // console.log(file);
-    // const formData = new FormData();
-    // formData.append('avatar', file);
-    // console.log(formData);
-    // dispatch(updateAvatar(file));
-  };
-
   const updateName = evt => {
     const newName = evt.target.value;
-    console.log(newName);
     dispatch(updateUser(newName));
   };
 
@@ -69,31 +44,7 @@ export default function ModalSetting({ onClose }) {
           <IoCloseSharp className="close" />
         </BtnClose>
         <TitlePopUp>Setting</TitlePopUp>
-        <AvatarPopUp>
-          {avatar === null ? (
-            <FcReddit className="icon-avatar" />
-          ) : (
-            <img src={avatar} alt="avatar" className="avatar-img" />
-          )}
-          <label htmlFor="file" className="lable-text">
-            <input
-              type="file"
-              id="file"
-              name="file"
-              // value={file}
-              // multiple
-              accept="image/*"
-              // style={{ display: 'none' }}
-              className="visually-hidden"
-              onClick={uploadFile}
-            />
-            <FaArrowUp /> Upload your avatar
-          </label>
-
-          {/* <button id="fileSelect" type="button" onClick={fileUpload}>
-            <FaArrowUp /> Upload your avatar
-          </button> */}
-        </AvatarPopUp>
+        <UploadFile />
         <NamePopUp>
           <h4 className="title-name">Your name</h4>
           <input
@@ -111,4 +62,3 @@ export default function ModalSetting({ onClose }) {
     </Backdrop>
   );
 }
-// onClick={e => e.stopPropagation()}

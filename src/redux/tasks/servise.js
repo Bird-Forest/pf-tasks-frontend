@@ -18,8 +18,9 @@ export const fetchTasks = createAsyncThunk(
     setAuthHeader(token);
     try {
       const res = await axios.get('/tasks');
+      setAuthHeader(res.data.token);
       // При успішному запиті повертаємо проміс із даними
-      // console.log(res.data);
+      console.log(res.data);
       return res.data; // ЦЕ БУДЕ ЗАПИСАНО В ЕКШИН ПЕЙЛОАД
     } catch (e) {
       // При помилці запиту повертаємо проміс
@@ -80,20 +81,3 @@ export const changeTaskColor = createAsyncThunk(
 );
 
 // *************************************************************************
-// export const fetchColorTasks = createAsyncThunk(
-//   'tasks/fetchColor',
-//   async (newColor, thunkAPI) => {
-//     console.log(newColor);
-//     const state = thunkAPI.getState();
-//     const token = state.auth.token;
-//     setAuthHeader(token);
-//     try {
-//       const res = await axios.get(`/tasks/${newColor}`);
-
-//       console.log(res.data);
-//       return res.data; // ЦЕ БУДЕ ЗАПИСАНО В ЕКШИН ПЕЙЛОАД
-//     } catch (e) {
-//       return thunkAPI.rejectWithValue(e.message);
-//     }
-//   }
-// );

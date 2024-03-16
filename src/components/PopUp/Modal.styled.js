@@ -53,7 +53,7 @@ export const TitlePopUp = styled.h3`
 // ******* SETTING *********
 export const AvatarPopUp = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   gap: 8px;
   .avatar-img {
@@ -68,29 +68,35 @@ export const AvatarPopUp = styled.div`
     border: 2px solid #f5f5f5;
   }
   .icon-avatar {
+    fill: #616161;
     width: 68px;
     height: 68px;
     border-radius: 50%;
-    background-color: red;
+    background-color: white;
   }
-  .visually-hidden {
-    /* position: absolute !important; */
-    position: absolute;
-    height: 1px;
-    width: 1px;
+  .input-hidden {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    line-height: 0;
     overflow: hidden;
-    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    margin: 0;
   }
-  input.visually-hidden:is(:focus, :focus-within) + label {
-    outline: thin dotted;
-  }
-  .lable-text {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5;
-    /* text-align: center; */
-    color: #424242;
+  .btn-choose {
+    background-color: transparent;
+    border: none;
     cursor: pointer;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+  }
+  .btn-arrow {
+    width: 24px;
+    height: 24px;
+    fill: #424242;
+  }
+  .btn-upload {
   }
 `;
 export const NamePopUp = styled.div`
@@ -219,7 +225,6 @@ export const FormTask = styled.form`
 `;
 export const InputForm = styled.input`
   display: flex;
-
   width: 240px;
   height: 24px;
   display: flex;
@@ -233,7 +238,6 @@ export const InputForm = styled.input`
   border: 2px solid #f5f5f5;
   border-radius: 10px;
   outline: none;
-
   .icon-add {
     width: 60px;
     height: 60px;

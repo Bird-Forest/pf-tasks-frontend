@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const MyStyled = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -106,4 +107,66 @@ export const ShowPasswordBtn = styled.button`
 export const ErrorMessage = styled.div`
   color: #ff1744;
   font-size: 12px;
+`;
+
+// *********  PopUp Error **************
+// export const Backdrop = styled.div`
+//   top: 0;
+//   left: 0;
+//   z-index: 3;
+//   position: fixed;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   width: 100vw;
+//   height: 100vh;
+//   color: #ffffff;
+//   backdrop-filter: blur(2px);
+//   background: rgba(255, 255, 255, 0.5);
+// `;
+export const WrapAuthError = styled.div`
+  /* bottom: 28px; */
+  /* left: 39%; */
+  /* right: 50%; */
+  /* position: absolute; */
+  /* position: relative; */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: flex-start;
+  align-items: center;
+  width: 260px;
+  height: 112px;
+  border-radius: 16px;
+  /* background-color: #e0e0e0; */
+  background-color: #f5f5f5;
+  box-shadow: 0px 4px 8px 0px RGBA(135, 135, 135, 0.34);
+  border: 1px solid #e0e0e0;
+  padding: 24px 12px;
+  margin: 0 0 40px 0;
+  .wrap-error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    /* height: 60px; */
+    padding: 0;
+  }
+  .error-text {
+    font-size: 18px;
+    font-weight: 500;
+    color: #424242;
+    padding: 0;
+  }
+  .error-link {
+    font-size: 20px;
+    font-weight: 700;
+    color: #424242;
+  }
+  .icon-lizard {
+    width: 100px;
+    height: 100px;
+    fill: #424242;
+  }
 `;

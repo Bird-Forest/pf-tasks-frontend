@@ -30,10 +30,10 @@ export const WrapSignPage = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
   width: 100%;
   margin: 0;
-  padding: 28px 0 0 0;
+  padding: 16px 0 0 0;
   @media screen and (min-width: 767px) {
     width: 760px;
   }

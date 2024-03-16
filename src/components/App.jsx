@@ -4,13 +4,15 @@ import { Container } from './App.styled';
 import Loading from './Loader/Loader';
 import AppBar from './AppBar/AppBar';
 import CustomRoutes from './AppRoutes/CustomRoutes';
+// import { useDispatch } from 'react-redux';
+// import { refreshThunk } from 'redux/user/operations';
 
 export const App = () => {
   // const dispatch = useDispatch();
-  // const { isRefreshing } = useAuth();
 
   // useEffect(() => {
   //   dispatch(refreshThunk());
+  //   console.log('CURRENT');
   // }, [dispatch]);
 
   return (

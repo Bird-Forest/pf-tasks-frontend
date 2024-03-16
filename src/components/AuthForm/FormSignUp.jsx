@@ -4,8 +4,10 @@ import * as Yup from 'yup';
 import InputText from './InputText';
 import InputPassword from './InputPassword';
 import { MyStyled } from './Form.styled';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { registerThunk } from 'redux/user/operations';
+import { selectErrorUser } from 'redux/selectors';
+import ErrorAuth from './ErrorAuth';
 
 const validationSchema = Yup.object({
   name: Yup.string()
@@ -23,6 +25,8 @@ const initialValues = {
 
 export default function FormSignUp() {
   const dispatch = useDispatch();
+  const errorAuth = useSelector(selectErrorUser);
+  console.log(errorAuth);
   return (
     <MyStyled>
       <Formik
@@ -50,6 +54,7 @@ export default function FormSignUp() {
           </Form>
         )}
       </Formik>
+      {errorAuth !== null && <ErrorAuth error={errorAuth} />}
     </MyStyled>
   );
 }
