@@ -6,7 +6,7 @@ axios.defaults.baseURL = 'http://localhost:3001/api';
 // Utility to add JWT
 const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-  console.log(token);
+  // console.log(token);
 };
 
 export const fetchTasks = createAsyncThunk(
@@ -47,6 +47,7 @@ export const addTask = createAsyncThunk(
     }
   }
 );
+
 export const deleteTask = createAsyncThunk(
   'tasks/deleteTask',
   async (taskId, thunkAPI) => {
@@ -67,6 +68,9 @@ export const deleteTask = createAsyncThunk(
 export const changeTaskColor = createAsyncThunk(
   'tasks/updateColor',
   async (newTask, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const token = state.auth.token;
+    setAuthHeader(token);
     try {
       const res = await axios.patch(`/tasks/${newTask.taskId}/color`, {
         color: newTask.newColor,

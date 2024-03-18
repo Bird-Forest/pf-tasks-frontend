@@ -9,10 +9,14 @@ export const HeaderWrap = styled.header`
   min-width: 300px;
   padding: 4px;
   margin: 0;
+  @media screen and (min-width: 536px) {
+    padding: 4px 8px;
+    width: 520px;
+  }
 
   @media screen and (min-width: 767px) {
     padding: 4px 16px;
-    width: 760px;
+    width: 720px;
   }
 `;
 // ************ Link Home Tasks *********
