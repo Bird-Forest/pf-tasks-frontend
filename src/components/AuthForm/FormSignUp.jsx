@@ -26,7 +26,7 @@ const initialValues = {
 export default function FormSignUp() {
   const dispatch = useDispatch();
   const errorAuth = useSelector(selectErrorUser);
-  console.log(errorAuth);
+  // console.log(errorAuth);
   return (
     <MyStyled>
       <Formik
@@ -34,7 +34,7 @@ export default function FormSignUp() {
         validationSchema={validationSchema}
         onSubmit={(values, { setSubmitting, resetForm }) => {
           setSubmitting(true);
-          console.log(values);
+          // console.log(values);
           dispatch(registerThunk(values));
           resetForm();
         }}

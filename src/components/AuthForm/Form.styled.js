@@ -71,9 +71,6 @@ export const InputWrap = styled.div`
     padding: 0;
     margin: 0;
   }
-  /* .label-input.error {
-    color: #ff1744;
-  } */
   .my-password {
     width: 260px;
     height: 24px;
@@ -110,26 +107,7 @@ export const ErrorMessage = styled.div`
 `;
 
 // *********  PopUp Error **************
-// export const Backdrop = styled.div`
-//   top: 0;
-//   left: 0;
-//   z-index: 3;
-//   position: fixed;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   width: 100vw;
-//   height: 100vh;
-//   color: #ffffff;
-//   backdrop-filter: blur(2px);
-//   background: rgba(255, 255, 255, 0.5);
-// `;
 export const WrapAuthError = styled.div`
-  /* bottom: 28px; */
-  /* left: 39%; */
-  /* right: 50%; */
-  /* position: absolute; */
-  /* position: relative; */
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -138,7 +116,6 @@ export const WrapAuthError = styled.div`
   width: 260px;
   height: 112px;
   border-radius: 16px;
-  /* background-color: #e0e0e0; */
   background-color: #f5f5f5;
   box-shadow: 0px 4px 8px 0px RGBA(135, 135, 135, 0.34);
   border: 1px solid #e0e0e0;

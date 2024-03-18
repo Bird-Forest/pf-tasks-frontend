@@ -50,7 +50,16 @@ export const TitlePopUp = styled.h3`
   text-align: center;
   color: #424242;
 `;
-// ******* SETTING *********
+// ******* SETTING AVATAR *********
+export const WrapUpdate = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+`;
 export const AvatarPopUp = styled.div`
   display: flex;
   justify-content: flex-start;
@@ -84,21 +93,29 @@ export const AvatarPopUp = styled.div`
     margin: 0;
   }
   .btn-choose {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    color: #424242;
     background-color: transparent;
     border: none;
     cursor: pointer;
-    width: 28px;
-    height: 28px;
+    width: 120px;
+    height: 24px;
     padding: 0;
   }
   .btn-arrow {
-    width: 24px;
-    height: 24px;
+    width: 16px;
+    height: 16px;
     fill: #424242;
   }
-  .btn-upload {
-  }
 `;
+// ******* SETTING NAME *********
 export const NamePopUp = styled.div`
   display: flex;
   flex-direction: column;
@@ -114,7 +131,7 @@ export const NamePopUp = styled.div`
   }
   .input-name {
     width: 200px;
-    height: 24px;
+    height: 20px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -129,6 +146,7 @@ export const NamePopUp = styled.div`
     outline: none;
   }
 `;
+// ******* SETTING BTN *********
 export const BtnPopUpSave = styled.button`
   display: flex;
   flex-direction: row;
@@ -139,9 +157,7 @@ export const BtnPopUpSave = styled.button`
   line-height: 1.5;
   color: #424242;
   width: 224px;
-  height: 48px;
-  padding: 10px 12px;
-  margin: 40px auto;
+  height: 40px;
   border-radius: 10px;
   box-shadow: 0px 4px 8px 0px RGBA(158, 158, 158, 0.34);
   background-color: #f5f5f5;
@@ -149,6 +165,8 @@ export const BtnPopUpSave = styled.button`
   border: 1px solid #f5f5f5;
   cursor: pointer;
   outline: #f5f5f5;
+  padding: 10px 12px;
+  margin: 0;
   &:hover,
   :focus {
     background-color: #e0e0e0;

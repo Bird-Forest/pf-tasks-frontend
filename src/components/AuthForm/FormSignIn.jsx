@@ -21,7 +21,7 @@ const initialValues = {
 export default function FormSignIn() {
   const dispatch = useDispatch();
   const errorAuth = useSelector(selectErrorUser);
-  console.log(errorAuth);
+  // console.log(errorAuth);
   return (
     <MyStyled>
       <Formik

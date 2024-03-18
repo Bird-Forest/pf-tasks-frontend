@@ -6,9 +6,9 @@ import { FaUserSecret } from 'react-icons/fa';
 
 export default function UserLogo() {
   const user = useSelector(selectUser);
-  console.log(user);
+  // console.log(user);
   const avatar = user.avatarURL;
-  console.log(avatar);
+  // console.log(avatar);
   const name = user.name;
 
   return (
@@ -30,4 +30,3 @@ export default function UserLogo() {
     </WrapUser>
   );
 }
-// <FcReddit className="icon-avatar" />

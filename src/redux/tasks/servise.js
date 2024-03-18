@@ -20,7 +20,7 @@ export const fetchTasks = createAsyncThunk(
       const res = await axios.get('/tasks');
       setAuthHeader(res.data.token);
       // При успішному запиті повертаємо проміс із даними
-      console.log(res.data);
+      // console.log(res.data);
       return res.data; // ЦЕ БУДЕ ЗАПИСАНО В ЕКШИН ПЕЙЛОАД
     } catch (e) {
       // При помилці запиту повертаємо проміс

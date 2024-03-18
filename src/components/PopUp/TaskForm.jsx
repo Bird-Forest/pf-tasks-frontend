@@ -34,7 +34,7 @@ export default function TaskForm({ onClose }) {
     event.preventDefault();
     const text = event.target.elements.title.value.trim();
     const newTask = { title: text };
-    console.log(newTask);
+    // console.log(newTask);
     if (text !== '') {
       dispatch(addTask(newTask));
       event.target.reset();

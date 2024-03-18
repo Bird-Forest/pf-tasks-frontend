@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { AvatarPopUp } from './Modal.styled';
+import { AvatarPopUp, BtnPopUpSave, WrapUpdate } from './Modal.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateAvatar } from 'redux/user/operations';
 import { FaUserSecret } from 'react-icons/fa';
@@ -15,7 +15,7 @@ export default function UploadFile() {
   const avatar = user.avatarURL;
 
   const handleChange = evt => {
-    // console.log(evt.target.files);
+    // console.log(evt.target.files[0]);
     setSelectedFile(evt.target.files[0]);
   };
   const handleUpload = () => {
@@ -26,7 +26,7 @@ export default function UploadFile() {
     const formData = new FormData();
     const file = selectedFile;
     formData.append('file', file);
-
+    // console.log(formData);
     dispatch(updateAvatar(formData));
   };
 
@@ -35,25 +35,28 @@ export default function UploadFile() {
   };
 
   return (
-    <AvatarPopUp>
-      {avatar === null ? (
-        <FaUserSecret className="icon-avatar" />
-      ) : (
-        <img src={avatar} alt="avatar" className="avatar-img" />
-      )}
+    <WrapUpdate>
+      <AvatarPopUp>
+        {avatar === null ? (
+          <FaUserSecret className="icon-avatar" />
+        ) : (
+          <img src={avatar} alt="avatar" className="avatar-img" />
+        )}
 
-      <input
-        accept="image/*, .png, .jpg, .web,"
-        type="file"
-        ref={filePicker}
-        onChange={handleChange}
-        className="input-hidden"
-        // multiple
-      />
-      <button onClick={handlePick} className="btn-choose">
-        <FaArrowUp className="btn-arrow" />
-      </button>
-      <button onClick={handleUpload}>Upload</button>
-    </AvatarPopUp>
+        <input
+          accept="image/*, .png, .jpg, .web,"
+          type="file"
+          ref={filePicker}
+          onChange={handleChange}
+          className="input-hidden"
+          // multiple
+        />
+        <button onClick={handlePick} className="btn-choose">
+          <FaArrowUp className="btn-arrow" />
+          file upload
+        </button>
+      </AvatarPopUp>
+      <BtnPopUpSave onClick={handleUpload}>Upload</BtnPopUpSave>
+    </WrapUpdate>
   );
 }

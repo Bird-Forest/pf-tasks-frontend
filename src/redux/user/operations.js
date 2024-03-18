@@ -17,7 +17,7 @@ const clearAuthHeader = () => {
 export const registerThunk = createAsyncThunk(
   'auth/register',
   async (values, thunkAPI) => {
-    console.log(values);
+    // console.log(values);
     try {
       const res = await axios.post('/users/register', values);
       // After successful registration, add the token to the HTTP header
@@ -25,7 +25,7 @@ export const registerThunk = createAsyncThunk(
       // Одразу логінізація для отримання токену
       // loginThunk(values)(thunkAPI.dispatch, thunkAPI.getState);
       // setAuthHeader(res.data.token);
-      console.log(res.data);
+      // console.log(res.data);
       return res.data;
     } catch (error) {
       console.log(error);
@@ -42,7 +42,7 @@ export const loginThunk = createAsyncThunk(
     try {
       const res = await axios.post('/users/login', values);
       // setAuthHeader(res.data.token);
-      console.log(res.data);
+      // console.log(res.data);
       return res.data; // ЦЕ БУДЕ ЗАПИСАНО В ЕКШИН ПЕЙЛОАД
     } catch (error) {
       console.log(error);
@@ -57,14 +57,14 @@ export const loginThunk = createAsyncThunk(
 export const updateAvatar = createAsyncThunk(
   'auth/avatar',
   async (formData, thunkAPI) => {
-    console.log(formData);
+    // console.log(formData);
     try {
       const state = thunkAPI.getState();
       const token = state.auth.token;
       setAuthHeader(token);
       const res = await axios.post('/users/avatar', formData);
       setAuthHeader(res.data.token);
-      console.log(res.data.filename);
+      // console.log(res.data);
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -76,14 +76,15 @@ export const updateAvatar = createAsyncThunk(
  */
 export const updateUser = createAsyncThunk(
   'auth/updateName',
-  async (newName, thunkAPI) => {
+  async (values, thunkAPI) => {
+    // console.log(values);
     try {
-      // const state = thunkAPI.getState();
-      // const token = state.auth.token;
-      // setAuthHeader(token);
-      const res = await axios.patch('/users/update/', newName);
+      const state = thunkAPI.getState();
+      const token = state.auth.token;
+      setAuthHeader(token);
+      const res = await axios.patch('/users/update/', values);
       setAuthHeader(res.data.token);
-      console.log(res.data);
+      // console.log(res.data);
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -112,21 +113,21 @@ export const logoutThunk = createAsyncThunk(
 /*
  * GET @ /users/current * headers: Authorization: Bearer token
  */
-export const refreshThunk = createAsyncThunk(
-  'auth/refresh',
-  async (_, thunkAPI) => {
-    const state = thunkAPI.getState();
-    const token = state.auth.token;
-    if (token === null) {
-      return thunkAPI.rejectWithValue('Unable to fetch user');
-    }
-    try {
-      const res = await axios.get('/users/current');
-      setAuthHeader(res.data.token);
-      console.log(res.data);
-      return res.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);
+// export const refreshThunk = createAsyncThunk(
+//   'auth/refresh',
+//   async (_, thunkAPI) => {
+//     const state = thunkAPI.getState();
+//     const token = state.auth.token;
+//     if (token === null) {
+//       return thunkAPI.rejectWithValue('Unable to fetch user');
+//     }
+//     try {
+//       const res = await axios.get('/users/current');
+//       setAuthHeader(res.data.token);
+//       console.log(res.data);
+//       return res.data;
+//     } catch (error) {
+//       return thunkAPI.rejectWithValue(error.message);
+//     }
+//   }
+// );

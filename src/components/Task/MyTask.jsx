@@ -51,8 +51,6 @@ export default function MyTask({ task }) {
             <BtnStatus
               type="button"
               name={task._id}
-              // color="#64b5f6"
-              // value="#64b5f6"
               value={filters.blue}
               onClick={handleChangeColor}
             >
@@ -61,8 +59,6 @@ export default function MyTask({ task }) {
             <BtnStatus
               type="button"
               name={task._id}
-              // color="#ff5252"
-              // value="#ff5252"
               value={filters.red}
               onClick={handleChangeColor}
             >
@@ -71,8 +67,6 @@ export default function MyTask({ task }) {
             <BtnStatus
               type="button"
               name={task._id}
-              // color="#ffee58"
-              // value="#ffee58"
               value={filters.yellow}
               onClick={handleChangeColor}
             >
@@ -81,8 +75,6 @@ export default function MyTask({ task }) {
             <BtnStatus
               type="button"
               name={task._id}
-              // color="#00e676"
-              // value="#00e676"
               value={filters.green}
               onClick={handleChangeColor}
             >

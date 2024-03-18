@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import {
   loginThunk,
   logoutThunk,
-  refreshThunk,
+  // refreshThunk,
   registerThunk,
   updateAvatar,
   updateUser,
@@ -12,8 +12,8 @@ import {
 const initialState = {
   user: { _id: null, name: null, email: null, avatarURL: null },
   token: null,
-  isLoggedIn: false,
-  isRefreshing: false,
+  // isLoggedIn: false,
+  // isRefreshing: false,
   error: null,
 };
 
@@ -37,7 +37,7 @@ const authSlice = createSlice({
       .addCase(registerThunk.fulfilled, (state, action) => {
         state.token = action.payload.token;
         state.user = action.payload.user;
-        state.isLoggedIn = true;
+        // state.isLoggedIn = true;
       })
       .addCase(registerThunk.rejected, handleRejected)
 
@@ -46,7 +46,7 @@ const authSlice = createSlice({
       .addCase(loginThunk.fulfilled, (state, action) => {
         state.token = action.payload.token;
         state.user = action.payload.user;
-        state.isLoggedIn = true;
+        // state.isLoggedIn = true;
       })
       .addCase(loginThunk.rejected, handleRejected)
 
@@ -54,39 +54,37 @@ const authSlice = createSlice({
       .addCase(logoutThunk.pending, handlePending)
       .addCase(logoutThunk.fulfilled, state => {
         state.user = { name: null, email: null, avatarURL: null };
-        // state.user = action.payload;
         state.token = null;
-        state.isLoggedIn = false;
-        // return initialState
+        // state.isLoggedIn = false;
       })
       .addCase(logoutThunk.rejected, handleRejected)
 
       // ---------- REFRESH USER ----------------
-      .addCase(refreshThunk.pending, handlePending)
-      .addCase(refreshThunk.fulfilled, (state, action) => {
-        state.token = action.payload.token;
-        state.user = action.payload.user;
-        state.isLoggedIn = true;
-        // state.isRefreshing = false;
-      })
-      .addCase(refreshThunk.rejected, (state, action) => {
-        // state.isRefreshing = false;
-        state.token = null;
-        state.isLoading = false;
-        state.error = action.payload.error;
-      })
+      // .addCase(refreshThunk.pending, handlePending)
+      // .addCase(refreshThunk.fulfilled, (state, action) => {
+      //   state.token = action.payload.token;
+      //   state.user = action.payload.user;
+      //   state.isLoggedIn = true;
+      //   state.isRefreshing = false;
+      // })
+      // .addCase(refreshThunk.rejected, (state, action) => {
+      //   state.isRefreshing = false;
+      //   state.token = null;
+      //   state.isLoading = false;
+      //   state.error = action.payload.error;
+      // })
 
       // ---------- USER AVATAR ----------------
       .addCase(updateAvatar.pending, handlePending)
       .addCase(updateAvatar.fulfilled, (state, action) => {
-        state.user.avatarURL = action.payload.avatarURL;
+        state.user.avatarURL = action.payload.user.avatarURL;
       })
       .addCase(updateAvatar.rejected, handleRejected)
 
       // ---------- USER NAME ----------------
       .addCase(updateUser.pending, handlePending)
       .addCase(updateUser.fulfilled, (state, action) => {
-        state.user = action.payload.name;
+        state.user.name = action.payload.name;
       })
       .addCase(updateUser.rejected, handleRejected),
 });
